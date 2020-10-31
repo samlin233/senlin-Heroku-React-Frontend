@@ -57,8 +57,7 @@ function Home() {
             <Container>
               <Row>
                 <Col xs={6} md={5}>
-                  <Image src="https://d31029zd06w0t6.cloudfront.net/wp-content/uploads/sites/60/2020/10/102320.MARIA_IZAGUIRRE.jm_.004.jpg" roundedCircle />
-                  style={{width: 200, height: 200, position: 'absolute'}}
+                  <Image src="https://d31029zd06w0t6.cloudfront.net/wp-content/uploads/sites/60/2020/10/102320.MARIA_IZAGUIRRE.jm_.004.jpg" roundedCircle style={{width:"200", height:"200"}} width='300' height='300'/>
                 </Col>
               </Row>
             </Container>
