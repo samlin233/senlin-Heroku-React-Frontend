@@ -1,5 +1,4 @@
 import React from 'react';
-import { View, Text } from "react-native";
 import '../style.css';
 import '../css/bootstrap.min.css';
 import 'react-bootstrap';
