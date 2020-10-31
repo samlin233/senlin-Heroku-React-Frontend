@@ -1,9 +1,14 @@
 import React from 'react';
+import { View, Text } from "react-native";
 import '../style.css';
 import '../css/bootstrap.min.css';
 import 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
+import Image from 'react-bootstrap/Image';
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 function Home() {
   return (
     <div>
@@ -50,15 +55,13 @@ function Home() {
           <div className="col-md-6 px-0">
             <h1 className="display-4 font-italic">Top Story of the Day</h1>
             <p className="lead my-3">Breast reconstructive surgery helps cancer survivor to heal. Maria Izaguirre couldn’t look at herself in the mirror for two years. It was too hard. “I was in shock to not be able to see that part of myself,” said Izaguirre, a breast cancer survivor...</p>
-            <View style={{ alignItems: "center", marginRight: 10 }}>
-                <Image
-                  style={{ width: 50, height: 50 }}
-                  source={{
-                    uri:
-                      "https://d31029zd06w0t6.cloudfront.net/wp-content/uploads/sites/60/2020/10/102320.MARIA_IZAGUIRRE.jm_.004.jpg"
-                  }}
-                />
-              </View>
+            <Container>
+              <Row>
+                <Col xs={6} md={4}>
+                  <Image src="holder.js/171x180" roundedCircle />
+                </Col>
+              </Row>
+            </Container>
             <p className="lead mb-0"><a href="https://www.themonitor.com/2020/10/28/breast-reconstructive-surgery-helps-cancer-survivor-heal/" className="text-white font-weight-bold">Continue reading...</a></p>
           </div>
         </div>
