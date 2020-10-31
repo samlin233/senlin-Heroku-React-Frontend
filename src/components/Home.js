@@ -1,7 +1,8 @@
 import React from 'react';
+import './style.css';
 function Home() {
     return (
-      <div>
+      <div className="style">
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content />
@@ -18,10 +19,10 @@ function Home() {
           <header className="blog-header py-3">
             <div className="row flex-nowrap justify-content-between align-items-center">
               <div className="col-4 pt-1">
-                <a className="text-muted" href="#">Subscribe</a>
+                <a className="text-muted" href="#">Hello</a>
               </div>
               <div className="col-4 text-center">
-                <a className="blog-header-logo text-dark" href="#">Large</a>
+                <a className="blog-header-logo text-dark" href="#">Show Your Beauty</a>
               </div>
               <div className="col-4 d-flex justify-content-end align-items-center">
                 <a className="text-muted" href="#" aria-label="Search">
