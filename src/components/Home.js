@@ -96,6 +96,7 @@ function Home() {
             </Card.Footer>
           </Card>
         </CardGroup>
+      </div>
       <main role="main" className="container">
         <div className="row">
           <div className="col-md-8 blog-main">
