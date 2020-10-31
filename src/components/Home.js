@@ -56,8 +56,8 @@ function Home() {
             <p className="lead my-3">Breast reconstructive surgery helps cancer survivor to heal. Maria Izaguirre couldn’t look at herself in the mirror for two years. It was too hard. “I was in shock to not be able to see that part of myself,” said Izaguirre, a breast cancer survivor...</p>
             <Container>
               <Row>
-                <Col xs={6} md={4}>
-                  <Image src="holder.js/171x180" roundedCircle />
+                <Col xs={12} md={0}>
+                  <Image src="https://d31029zd06w0t6.cloudfront.net/wp-content/uploads/sites/60/2020/10/102320.MARIA_IZAGUIRRE.jm_.004.jpg" roundedCircle />
                 </Col>
               </Row>
             </Container>
