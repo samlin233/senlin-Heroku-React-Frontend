@@ -11,7 +11,7 @@ function Home() {
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
       <meta name="description" content />
       <meta name="author" content />
-      <title>Blog Template for Bootstrap</title>
+      <title>Plastic Surgery</title>
       {/* Bootstrap core CSS */}
       <link href="../css/bootstrap.min.css" rel="stylesheet" />
       {/* Custom styles for this template */}
@@ -21,40 +21,45 @@ function Home() {
         <header className="blog-header py-3">
           <div className="row flex-nowrap justify-content-between align-items-center">
             <div className="col-4 pt-1">
-              <a className="text-muted" href="#">Subscribe</a>
+              <a className="text-muted" href="#">LogoGoesHere</a>
             </div>
             <div className="col-4 text-center">
-              <a className="blog-header-logo text-dark" href="#">Large</a>
+              <a className="blog-header-logo text-dark" href="#">Show Your Beauty</a>
             </div>
             <div className="col-4 d-flex justify-content-end align-items-center">
               <a className="text-muted" href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="mx-3"><circle cx="10.5" cy="10.5" r="7.5" /><line x1={21} y1={21} x2="15.8" y2="15.8" /></svg>
               </a>
               <a className="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+              <a className="btn btn-sm btn-outline-secondary" href="#">Log in</a>
             </div>
           </div>
         </header>
         <div className="nav-scroller py-1 mb-2">
           <nav className="nav d-flex justify-content-between">
-            <a className="p-2 text-muted" href="#">World</a>
-            <a className="p-2 text-muted" href="#">U.S.</a>
-            <a className="p-2 text-muted" href="#">Technology</a>
-            <a className="p-2 text-muted" href="#">Design</a>
-            <a className="p-2 text-muted" href="#">Culture</a>
-            <a className="p-2 text-muted" href="#">Business</a>
-            <a className="p-2 text-muted" href="#">Politics</a>
-            <a className="p-2 text-muted" href="#">Opinion</a>
-            <a className="p-2 text-muted" href="#">Science</a>
-            <a className="p-2 text-muted" href="#">Health</a>
-            <a className="p-2 text-muted" href="#">Style</a>
-            <a className="p-2 text-muted" href="#">Travel</a>
+            <a className="p-2 text-muted" href="#">Hospitals</a>
+            <a className="p-2 text-muted" href="#">Doctors</a>
+            <a className="p-2 text-muted" href="#">Facial</a>
+            <a className="p-2 text-muted" href="#">Eyes</a>
+            <a className="p-2 text-muted" href="#">Lips</a>
+            <a className="p-2 text-muted" href="#">Body</a>
+            <a className="p-2 text-muted" href="#">Others</a>
           </nav>
         </div>
         <div className="jumbotron p-3 p-md-5 text-white rounded bg-dark">
           <div className="col-md-6 px-0">
-            <h1 className="display-4 font-italic">Title of a longer featured blog post</h1>
-            <p className="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.</p>
-            <p className="lead mb-0"><a href="#" className="text-white font-weight-bold">Continue reading...</a></p>
+            <h1 className="display-4 font-italic">Top Story of the Day</h1>
+            <p className="lead my-3">Breast reconstructive surgery helps cancer survivor to heal. Maria Izaguirre couldn’t look at herself in the mirror for two years. It was too hard. “I was in shock to not be able to see that part of myself,” said Izaguirre, a breast cancer survivor...</p>
+            <View style={{ alignItems: "center", marginRight: 10 }}>
+                <Image
+                  style={{ width: 50, height: 50 }}
+                  source={{
+                    uri:
+                      "https://d31029zd06w0t6.cloudfront.net/wp-content/uploads/sites/60/2020/10/102320.MARIA_IZAGUIRRE.jm_.004.jpg"
+                  }}
+                />
+              </View>
+            <p className="lead mb-0"><a href="https://www.themonitor.com/2020/10/28/breast-reconstructive-surgery-helps-cancer-survivor-heal/" className="text-white font-weight-bold">Continue reading...</a></p>
           </div>
         </div>
         <CardGroup>
