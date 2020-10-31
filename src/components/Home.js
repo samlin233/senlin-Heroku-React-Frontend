@@ -53,14 +53,16 @@ function Home() {
         <div className="jumbotron p-3 p-md-5 text-white rounded bg-dark">
           <div className="col-md-6 px-0">
             <h1 className="display-4 font-italic">Top Story of the Day</h1>
-            <p className="lead my-3">Breast reconstructive surgery helps cancer survivor to heal. Maria Izaguirre couldn’t look at herself in the mirror for two years. It was too hard. “I was in shock to not be able to see that part of myself,” said Izaguirre, a breast cancer survivor...</p>
-            <Container>
+            <p className="lead my-3">Breast reconstructive surgery helps cancer survivor to heal. Maria Izaguirre couldn’t look at herself in the mirror for two years. It was too hard. “I was in shock to not be able to see ...</p>
+
+{/*             <Container>
               <Row>
                 <Col xs={6} md={5}>
                   <Image src="https://d31029zd06w0t6.cloudfront.net/wp-content/uploads/sites/60/2020/10/102320.MARIA_IZAGUIRRE.jm_.004.jpg" roundedCircle style={{width:"200", height:"200"}} width='300' height='300'/>
                 </Col>
               </Row>
             </Container>
+*/}         
             <p className="lead mb-0"><a href="https://www.themonitor.com/2020/10/28/breast-reconstructive-surgery-helps-cancer-survivor-heal/" className="text-white font-weight-bold">Continue reading...</a></p>
           </div>
         </div>
@@ -68,41 +70,37 @@ function Home() {
           <Card>
             <Card.Img variant="top" src="holder.js/100px160" />
             <Card.Body>
-              <Card.Title>Card title</Card.Title>
+              <Card.Title>Daily top ratted Doctor</Card.Title>
               <Card.Text>
-                This is a wider card with supporting text below as a natural lead-in to
-                additional content. This content is a little bit longer.
+                Place introduction of the most reviewed doctor of the day.
               </Card.Text>
             </Card.Body>
             <Card.Footer>
-              <small className="text-muted">Last updated 3 mins ago</small>
+              <small className="text-muted" herf="#">Click for more infomation</small>
             </Card.Footer>
           </Card>
           <Card>
             <Card.Img variant="top" src="holder.js/100px160" />
             <Card.Body>
-              <Card.Title>Card title</Card.Title>
+              <Card.Title>Daily top ratted hospital</Card.Title>
               <Card.Text>
-                This card has supporting text below as a natural lead-in to additional
-                content.{' '}
+                Place introduction of the most reviewed hospital of the day
               </Card.Text>
-            </Card.Body>
+            </Card.Body>Place introduction of the most reviewed doctor of the day.
             <Card.Footer>
-              <small className="text-muted">Last updated 3 mins ago</small>
+              <small className="text-muted" herf="#">Click for more infomation</small>
             </Card.Footer>
           </Card>
           <Card>
             <Card.Img variant="top" src="holder.js/100px160" />
             <Card.Body>
-              <Card.Title>Card title</Card.Title>
+              <Card.Title>Daily top ratted post</Card.Title>
               <Card.Text>
-                This is a wider card with supporting text below as a natural lead-in to
-                additional content. This card has even longer content than the first to
-                show that equal height action.
+                Place topic of the most reviewed post of the day
               </Card.Text>
             </Card.Body>
             <Card.Footer>
-              <small className="text-muted">Last updated 3 mins ago</small>
+              <small className="text-muted" herf="#">Click for more infomation</small>
             </Card.Footer>
           </Card>
         </CardGroup>
@@ -110,14 +108,15 @@ function Home() {
       <main role="main" className="container">
         <div className="row">
           <div className="col-md-8 blog-main">
-            <h3 className="pb-3 mb-4 font-italic border-bottom">
-              From the Firehose
-            </h3>
-            <div className="blog-post">
-              <h2 className="blog-post-title">Sample blog post</h2>
-              <p className="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
-              <p>This blog post shows a few different types of content that's supported and styled with Bootstrap. Basic typography, images, and code are all supported.</p>
+            <h1 className="pb-3 mb-4 font-italic border-bottom">
+              Newest Post
+            </h1>
+            <div className="blog-post"herf=''>
+              <h2 className="blog-post-title">Sample post</h2>
+              <p className="blog-post-meta" >Nov 1, 2020 by <a href="#">User</a></p>
               <hr />
+              <p>This post shows a few different types of content that's supported and styled with Bootstrap. Basic typography, images, and code are all supported.</p>
+
               <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
               <blockquote>
                 <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
@@ -129,24 +128,11 @@ function Home() {
               <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
               <pre><code>Example code block</code></pre>
               <p>Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-              <h3>Sub-heading</h3>
-              <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-              <ul>
-                <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
-                <li>Donec id elit non mi porta gravida at eget metus.</li>
-                <li>Nulla vitae elit libero, a pharetra augue.</li>
-              </ul>
-              <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
-              <ol>
-                <li>Vestibulum id ligula porta felis euismod semper.</li>
-                <li>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
-                <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
-              </ol>
-              <p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
+
             </div>{/* /.blog-post */}
             <div className="blog-post">
               <h2 className="blog-post-title">Another blog post</h2>
-              <p className="blog-post-meta">December 23, 2013 by <a href="#">Jacob</a></p>
+              <p className="blog-post-meta">December 23, 2020 by <a href="#">User2</a></p>
               <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
               <blockquote>
                 <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
@@ -156,7 +142,7 @@ function Home() {
             </div>{/* /.blog-post */}
             <div className="blog-post">
               <h2 className="blog-post-title">New feature</h2>
-              <p className="blog-post-meta">December 14, 2013 by <a href="#">Chris</a></p>
+              <p className="blog-post-meta">December 14, 2020 by <a href="#">User3</a></p>
               <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
               <ul>
                 <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
@@ -167,8 +153,8 @@ function Home() {
               <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
             </div>{/* /.blog-post */}
             <nav className="blog-pagination">
-              <a className="btn btn-outline-primary" href="#">Older</a>
-              <a className="btn btn-outline-secondary disabled" href="#">Newer</a>
+              <a className="btn btn-outline-primary" href="#">Show More</a>
+              <a className="btn btn-outline-secondary disabled" href="#">Show Less</a>
             </nav>
           </div>{/* /.blog-main */}
           <aside className="col-md-4 blog-sidebar">
@@ -177,24 +163,24 @@ function Home() {
               <p className="mb-0">Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
             </div>
             <div className="p-3">
-              <h4 className="font-italic">Archives</h4>
+              <h4 className="font-italic">Hottest of the month</h4>
               <ol className="list-unstyled mb-0">
-                <li><a href="#">March 2014</a></li>
-                <li><a href="#">February 2014</a></li>
-                <li><a href="#">January 2014</a></li>
-                <li><a href="#">December 2013</a></li>
-                <li><a href="#">November 2013</a></li>
-                <li><a href="#">October 2013</a></li>
-                <li><a href="#">September 2013</a></li>
-                <li><a href="#">August 2013</a></li>
-                <li><a href="#">July 2013</a></li>
-                <li><a href="#">June 2013</a></li>
-                <li><a href="#">May 2013</a></li>
-                <li><a href="#">April 2013</a></li>
+                <li><a href="#">March 2020</a></li>
+                <li><a href="#">February 2020</a></li>
+                <li><a href="#">January 2020</a></li>
+                <li><a href="#">December 2019</a></li>
+                <li><a href="#">November 2019</a></li>
+                <li><a href="#">October 2019</a></li>
+                <li><a href="#">September 2019</a></li>
+                <li><a href="#">August 2019</a></li>
+                <li><a href="#">July 2019</a></li>
+                <li><a href="#">June 2019</a></li>
+                <li><a href="#">May 2019</a></li>
+                <li><a href="#">April 2019</a></li>
               </ol>
             </div>
             <div className="p-3">
-              <h4 className="font-italic">Elsewhere</h4>
+              <h4 className="font-italic">Follow Us</h4>
               <ol className="list-unstyled">
                 <li><a href="#">GitHub</a></li>
                 <li><a href="#">Twitter</a></li>
