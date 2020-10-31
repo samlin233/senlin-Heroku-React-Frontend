@@ -1,6 +1,7 @@
 import React from 'react';
 import '../style.css';
 import '../css/bootstrap.min.css';
+import 'react-bootstrap';
 import Card from 'react-bootstrap/Button';
 import CardGroup from 'react-bootstrap/Button';
 function Home() {
