@@ -76,7 +76,7 @@ function Home() {
               </Card.Text>
             </Card.Body>
             <Card.Footer>
-              <small className="text-muted" herf="#">Click for more infomation</small>
+              <small className="text-muted" href="#">Click for more infomation</small>
             </Card.Footer>
           </Card>
           <Card>
@@ -88,7 +88,7 @@ function Home() {
               </Card.Text>
             </Card.Body>Place introduction of the most reviewed doctor of the day.
             <Card.Footer>
-              <small className="text-muted" herf="#">Click for more infomation</small>
+              <small className="text-muted" href="#">Click for more infomation</small>
             </Card.Footer>
           </Card>
           <Card>
@@ -100,7 +100,7 @@ function Home() {
               </Card.Text>
             </Card.Body>
             <Card.Footer>
-              <small className="text-muted" herf="#">Click for more infomation</small>
+              <small className="text-muted" href="#">Click for more infomation</small>
             </Card.Footer>
           </Card>
         </CardGroup>
@@ -111,7 +111,7 @@ function Home() {
             <h1 className="pb-3 mb-4 font-italic border-bottom">
               Newest Post
             </h1>
-            <div className="blog-post"herf=''>
+            <div className="blog-post"href=''>
               <h2 className="blog-post-title">Sample post</h2>
               <p className="blog-post-meta" >Nov 1, 2020 by <a href="#">User</a></p>
               <hr />
@@ -131,7 +131,7 @@ function Home() {
 
             </div>{/* /.blog-post */}
             <div className="blog-post">
-              <h2 className="blog-post-title">Another blog post</h2>
+              <h2 className="blog-post-title">Another post</h2>
               <p className="blog-post-meta">December 23, 2020 by <a href="#">User2</a></p>
               <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
               <blockquote>
@@ -141,7 +141,7 @@ function Home() {
               <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
             </div>{/* /.blog-post */}
             <div className="blog-post">
-              <h2 className="blog-post-title">New feature</h2>
+              <h2 className="blog-post-title">New Post</h2>
               <p className="blog-post-meta">December 14, 2020 by <a href="#">User3</a></p>
               <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
               <ul>
@@ -163,7 +163,7 @@ function Home() {
               <p className="mb-0">Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
             </div>
             <div className="p-3">
-              <h4 className="font-italic">Hottest of the month</h4>
+              <h4 className="font-italic">Hottest post of the month</h4>
               <ol className="list-unstyled mb-0">
                 <li><a href="#">March 2020</a></li>
                 <li><a href="#">February 2020</a></li>
@@ -191,7 +191,6 @@ function Home() {
         </div>{/* /.row */}
       </main>{/* /.container */}
       <footer className="blog-footer">
-        <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> </p>
         <p>
           <a href="#">Back to top</a>
         </p>
