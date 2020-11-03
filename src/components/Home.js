@@ -37,8 +37,8 @@ function Home() {
               <a className="blog-header-logo text-dark" href="#">Show Your Beauty</a>
             </div>
             <div className="col-4 d-flex justify-content-end align-items-center">
-              <a className="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
-              <a className="btn btn-sm btn-outline-secondary" href="#">Log in</a>
+              <a className="btn btn-sm btn-outline-secondary" Link to ="/popout">Sign up</a>
+              <a className="btn btn-sm btn-outline-secondary" Link to ="/popout">Log in</a>
             </div>
           </div>
         </header>

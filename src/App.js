@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
-import CredsForm from './components/SaveCreds';
+import MyVerticallyCenteredModal from './components/popout';
 import Navbar from './components/Navbar';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
         <main>
             <Switch>
 		<Route path="/" component={Home} exact />
-                <Route path="/creds" component={CredsForm} />
+                <Route path="/popout" component={MyVerticallyCenteredModal} />
 	        <Route component={Error} />
             </Switch>
 	    <Navbar />
