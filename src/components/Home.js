@@ -9,7 +9,8 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import FormControl from 'react-bootstrap/FormControl'
+import FormControl from 'react-bootstrap/FormControl';
+import Modal from 'react-bootstrap/Modal'
 import Image from 'react-bootstrap/Image';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
