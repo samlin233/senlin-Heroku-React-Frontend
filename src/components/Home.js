@@ -10,11 +10,13 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl'
+import MyVerticallyCenteredModal from '../components/popout/MyVerticallyCenteredModal'
 import Image from 'react-bootstrap/Image';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 function Home() {
+  const [modalShow, setModalShow] = React.useState(false);
   return (
     <div>
       <meta charSet="utf-8" />
@@ -37,8 +39,14 @@ function Home() {
               <a className="blog-header-logo text-dark" href="#">Show Your Beauty</a>
             </div>
             <div className="col-4 d-flex justify-content-end align-items-center">
-              <a className="btn btn-sm btn-outline-secondary" Link to ="/popout">Sign up</a>
-              <a className="btn btn-sm btn-outline-secondary" Link to ="/popout">Log in</a>
+            <Button variant="primary" onClick={() => setModalShow(true)}>
+              Sign Up
+            </Button>
+
+            <MyVerticallyCenteredModal
+              show={modalShow}
+              onHide={() => setModalShow(false)}
+            />
             </div>
           </div>
         </header>
