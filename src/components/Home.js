@@ -7,6 +7,9 @@ import CardGroup from 'react-bootstrap/CardGroup';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import FormControl from 'react-bootstrap/FormControl'
 import Image from 'react-bootstrap/Image';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -34,35 +37,36 @@ function Home() {
               <a className="blog-header-logo text-dark" href="#">Show Your Beauty</a>
             </div>
             <div className="col-4 d-flex justify-content-end align-items-center">
-              <a className="text-muted" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="mx-3"><circle cx="10.5" cy="10.5" r="7.5" /><line x1={21} y1={21} x2="15.8" y2="15.8" /></svg>
-              </a>
               <a className="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
               <a className="btn btn-sm btn-outline-secondary" href="#">Log in</a>
             </div>
           </div>
         </header>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky = "top">
-          <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+          <Navbar.Brand href="#home">Show Your Beauty</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link href="#features">Features</Nav.Link>
-              <Nav.Link href="#pricing">Pricing</Nav.Link>
-              <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <Nav.Link href="#Hospitals">Hospitals</Nav.Link>
+              <Nav.Link href="#Doctors">Doctors</Nav.Link>
+              <Nav.Link href="#Eyes">Eyes</Nav.Link>
+              <Nav.Link href="#Lips">Lips</Nav.Link>
+              <Nav.Link href="#Jaw">Jaw</Nav.Link>
+              <Nav.Link href="#Fillers">Fillers</Nav.Link>
+              <Nav.Link href="#Breast">Breast</Nav.Link>
+              <Nav.Link href="#Tummy">Tummy</Nav.Link>
+              <NavDropdown title="Others" id="collasible-nav-dropdown">
+                <NavDropdown.Item href="Suction Lipectomy">Suction Lipectomy"</NavDropdown.Item>
+                <NavDropdown.Item href="Laser Resurfacing">Laser Resurfacing</NavDropdown.Item>
+                <NavDropdown.Item href="Sclerotherapy">Sclerotherapy</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                <NavDropdown.Item href="Not Listed">Not Listed</NavDropdown.Item>
               </NavDropdown>
             </Nav>
-            <Nav>
-              <Nav.Link href="#deets">More deets</Nav.Link>
-              <Nav.Link eventKey={2} href="#memes">
-                Dank memes
-              </Nav.Link>
-            </Nav>
+            <Form inline>
+              <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+              <Button variant="outline-light">Search</Button>
+            </Form>
           </Navbar.Collapse>
         </Navbar>
 {/*        <div className="nav-scroller py-1 mb-2">
