@@ -46,8 +46,7 @@ function MyVerticallyCenteredModal(props) {
 
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="outline-light">Sign Up</Button>
-        <Button onClick={props.onHide}>Close</Button>
+        <Button onClick={props.onHide} href = "/">Sign Up</Button>
       </Modal.Footer>
     </Modal>
   );
