@@ -11,6 +11,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 import Modal from 'react-bootstrap/Modal';
+import Navbartype from './Navbarp/Navbarp';
 import Backgroundjpg from '../image/background.jpg';
 import Image from 'react-bootstrap/Image';
 import Container from 'react-bootstrap/Container';
@@ -61,11 +62,10 @@ function MyVerticallyCenteredModal2(props) {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Sign up for new account
+          Sign in with your user account and password
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Creat New Account</h4>
         <p>
           User Name:
         </p>
@@ -129,33 +129,7 @@ function Home() {
             </div>
           </div>
         </header>
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky = "top">
-          <Navbar.Brand href="#">Show Your Beauty</Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mr-auto">
-              <Nav.Link href="#Hospitals">Hospitals</Nav.Link>
-              <Nav.Link href="#Doctors">Doctors</Nav.Link>
-              <Nav.Link href="#Eyes">Eyes</Nav.Link>
-              <Nav.Link href="#Lips">Lips</Nav.Link>
-              <Nav.Link href="#Jaw">Jaw</Nav.Link>
-              <Nav.Link href="#Fillers">Fillers</Nav.Link>
-              <Nav.Link href="#Breast">Breast</Nav.Link>
-              <Nav.Link href="#Tummy">Tummy</Nav.Link>
-              <NavDropdown title="Others" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="Suction Lipectomy">Suction Lipectomy"</NavDropdown.Item>
-                <NavDropdown.Item href="Laser Resurfacing">Laser Resurfacing</NavDropdown.Item>
-                <NavDropdown.Item href="Sclerotherapy">Sclerotherapy</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="Not Listed">Not Listed</NavDropdown.Item>
-              </NavDropdown>
-            </Nav>
-            <Form inline>
-              <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-              <Button variant="outline-light">Search</Button>
-            </Form>
-          </Navbar.Collapse>
-        </Navbar>
+        <Navbartype></Navbartype>
 {/*        <div className="nav-scroller py-1 mb-2">
           <nav className="nav d-flex justify-content-between">
             <a className="p-2 text-muted" href="#">Hospitals</a>
