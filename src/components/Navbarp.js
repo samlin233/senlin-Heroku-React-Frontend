@@ -8,7 +8,7 @@ import FormControl from 'react-bootstrap/FormControl';
 import { Link } from 'react-router-dom';
 function Navbarp() {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky = "top">
+    <Navbar collapseOnSelect expand="lg" bg="pink" variant="green" sticky = "top">
     <Navbar.Brand href="#">Show Your Beauty</Navbar.Brand>
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
     <Navbar.Collapse id="responsive-navbar-nav">
