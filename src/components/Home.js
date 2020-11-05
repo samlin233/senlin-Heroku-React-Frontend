@@ -178,7 +178,7 @@ function Home() {
                 </Card.Text>
               </Card.Body>
               <Card.Footer>
-                <small className="text-muted" href="#">Click for more infomation</small>
+                <small className="text-muted" href="/">Click for more infomation</small>
               </Card.Footer>
             </Card>
             <Card>
@@ -190,7 +190,7 @@ function Home() {
                 </Card.Text>
               </Card.Body>Place introduction of the most reviewed doctor of the day.
               <Card.Footer>
-                <small className="text-muted" href="#">Click for more infomation</small>
+                <small className="text-muted" href="/">Click for more infomation</small>
               </Card.Footer>
             </Card>
             <Card>
@@ -202,7 +202,7 @@ function Home() {
                 </Card.Text>
               </Card.Body>
               <Card.Footer>
-                <small className="text-muted" href="#">Click for more infomation</small>
+                <small className="text-muted" href="/">Click for more infomation</small>
               </Card.Footer>
             </Card>
           </CardGroup>
