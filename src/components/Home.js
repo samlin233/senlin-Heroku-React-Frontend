@@ -11,7 +11,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 import Modal from 'react-bootstrap/Modal';
-import Backgroundjpg from '../image/Backgroundjpg';
+import Backgroundjpg from '../image/Background.jpg';
 import Image from 'react-bootstrap/Image';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -44,10 +44,43 @@ function MyVerticallyCenteredModal(props) {
         <p>
         <FormControl type="text" placeholder="Enter Your Password" className="mr-sm-2" />
         </p>
-
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide} href = "/">Sign Up</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+}
+function MyVerticallyCenteredModal(props) {
+  return (
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Sign up for new account
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <h4>Creat New Account</h4>
+        <p>
+          User Name:
+        </p>
+        <p>
+        <FormControl type="text" placeholder="Enter Your User Name" className="mr-sm-2" />
+        </p>        
+        <p>
+          Pass Word:
+        </p>
+        <p>
+        <FormControl type="text" placeholder="Enter Your Password" className="mr-sm-2" />
+        </p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={props.onHide} href = "/">Log In</Button>
       </Modal.Footer>
     </Modal>
   );
@@ -56,6 +89,7 @@ function MyVerticallyCenteredModal(props) {
 function Home() {
   const [modalShow, setModalShow] = React.useState(false);
   return (
+    
     <div>
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -77,8 +111,13 @@ function Home() {
               <a className="blog-header-logo text-dark" href="#">Show Your Beauty</a>
             </div>
             <div className="col-4 d-flex justify-content-end align-items-center">
-            <Button variant="primary" onClick={() => setModalShow(true)}>
+            
+            <Button variant="success" onClick={() => setModalShow(true)}>
               Sign Up
+            </Button>
+
+            <Button variant="success" onClick={() => setModalShow(true)}>
+              Log In
             </Button>
 
             <MyVerticallyCenteredModal
