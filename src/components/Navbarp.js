@@ -3,7 +3,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
-function Navbar() {
+function Navbarp() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky = "top">
     <Navbar.Brand href="#">Show Your Beauty</Navbar.Brand>
