@@ -130,7 +130,7 @@ function Home() {
           </div>
         </header>
         
-        <Navbar collapseOnSelect expand="lg" bg="pink" variant="green" sticky = "top">
+        <Navbar collapseOnSelect expand="lg" bg="warning" variant="dark" sticky = "top">
         <Navbar.Brand href="#">Show Your Beauty</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -157,7 +157,7 @@ function Home() {
           </Form>
         </Navbar.Collapse>
       </Navbar>
-      
+
         <div className="jumbotron p-3 p-md-5 text-white rounded bg-dark">
           <div className="col-md-6 px-0">
             <h1 className="display-4 font-italic">Top Story of the Day</h1>
