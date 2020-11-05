@@ -90,7 +90,7 @@ function Home() {
   const [modalShow, setModalShow] = React.useState(false);
   const [modalShow2, setModalShow2] = React.useState(false);
   return (
-    <div className = "background" style={{backgroundImage:Backgroundjpg}}>
+    /*<div className = "background" style={{backgroundImage:Backgroundjpg}}>*/
       <div>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -301,7 +301,7 @@ function Home() {
     ================================================== */}
         {/* Placed at the end of the document so the pages load faster */}
       </div>
-    </div>
+    /*</div>*/
   );
 };
 export default Home;
