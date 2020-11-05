@@ -88,6 +88,7 @@ function MyVerticallyCenteredModal2(props) {
 
 function Home() {
   const [modalShow, setModalShow] = React.useState(false);
+  const [modalShow2, setModalShow2] = React.useState(false);
   return (
     
     <div>
@@ -119,12 +120,13 @@ function Home() {
               show={modalShow}
               onHide={() => setModalShow(false)}
             />
-            <Button variant="success" onClick={() => setModalShow(true)}>
+            
+            <Button variant="success" onClick={() => setModalShow2(true)}>
               Log In
             </Button>
             <MyVerticallyCenteredModal2
-              show={modalShow}
-              onHide={() => setModalShow(false)}
+              show={modalShow2}
+              onHide={() => setModalShow2(false)}
             />
             </div>
           </div>
