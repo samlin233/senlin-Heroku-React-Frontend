@@ -4,12 +4,12 @@ import Home from './components/Home';
 import CredsForm from './components/SaveCreds';
 import Navbar from './components/Navbarp';
 
-function App() {
+function App() { 
     return (
         <main>
             <Switch>
                 <Route path="/" component={Home} exact />
-                <Route path="/creds" component={CredsForm} />
+                {/*<Route path="/creds" component={CredsForm} />*/}
                 <Route component={Error} />
             </Switch>
 	    <Navbar />
