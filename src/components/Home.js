@@ -11,7 +11,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 import Modal from 'react-bootstrap/Modal';
-import Navbartype from './Navbarp/Navbarp';
+import Navbartype from './Navbarp';
 import Backgroundjpg from '../image/background.jpg';
 import Image from 'react-bootstrap/Image';
 import Container from 'react-bootstrap/Container';
