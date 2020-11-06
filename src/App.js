@@ -11,6 +11,7 @@ function App() {
             {/*<Navbar />*/}
             <Switch>
                 <Route path="/" component={TestHome} exact />
+                <Route path="/Home" component={Home} exact />
                 {/*<Route path="/creds" component={CredsForm} />*/}
                 <Route component={Error} />
             </Switch>
