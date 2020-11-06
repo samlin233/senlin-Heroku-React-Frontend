@@ -132,7 +132,7 @@ function Home() {
             </div>
           </header>
           
-          <Navbar collapseOnSelect expand="lg" bg="pink" variant="light" sticky = "top">
+          <Navbar collapseOnSelect expand="lg" bg="success" variant="light" sticky = "top">
           <Navbar.Brand href="#">Show Your Beauty</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -146,7 +146,7 @@ function Home() {
               <Nav.Link href="#Breast">Breast</Nav.Link>
               <Nav.Link href="#Tummy">Tummy</Nav.Link>
               <NavDropdown title="Others" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="Suction Lipectomy">Suction Lipectomy</NavDropdown.Item>
+                <NavDropdown.Item href="Suction Lipectomy">Suction Lipectomy"</NavDropdown.Item>
                 <NavDropdown.Item href="Laser Resurfacing">Laser Resurfacing</NavDropdown.Item>
                 <NavDropdown.Item href="Sclerotherapy">Sclerotherapy</NavDropdown.Item>
                 <NavDropdown.Divider />
@@ -207,6 +207,7 @@ function Home() {
             </Card>
           </CardGroup>
         </div>
+        <main role="main" className="container">
           <div className="row">
             <div className="col-md-8 blog-main">
               <h1 className="pb-3 mb-4 font-italic border-bottom">
@@ -290,6 +291,7 @@ function Home() {
               </div>
             </aside>{/* /.blog-sidebar */}
           </div>{/* /.row */}
+        </main>{/* /.container */}
         <footer className="blog-footer">
           <p>
             <a href="#">Back to top</a>
