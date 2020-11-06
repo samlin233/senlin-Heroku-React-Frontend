@@ -17,9 +17,9 @@ import {
   MDBFormInline,
   MDBAnimation
 } from "mdbreact";
-import "./index.css";
+import "../css/TestHome.css";
 
-class AppPage extends React.Component {
+class TestHome extends React.Component {
   state = {
     collapsed: false
   };
@@ -147,4 +147,4 @@ class AppPage extends React.Component {
   }
 }
 
-export default AppPage;
+export default TestHome;
