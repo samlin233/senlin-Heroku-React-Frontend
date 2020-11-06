@@ -8,12 +8,13 @@ import TestHome from './components/TestHome';
 function App() { 
     return (
         <main>
+            {/*<Navbar />*/}
             <Switch>
                 <Route path="/" component={TestHome} exact />
                 {/*<Route path="/creds" component={CredsForm} />*/}
                 <Route component={Error} />
             </Switch>
-	    <Navbar />
+
         </main>
     );
 };
