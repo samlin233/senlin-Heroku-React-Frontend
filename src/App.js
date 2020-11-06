@@ -2,13 +2,13 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
 import CredsForm from './components/SaveCreds';
-import Index from './components/index'
+import TestHome from './components/TestHome';
 
 function App() { 
     return (
         <main>
             <Switch>
-                <Route path="/" component={Index} exact />
+                <Route path="/" component={TestHome} exact />
                 {/*<Route path="/creds" component={CredsForm} />*/}
                 <Route component={Error} />
             </Switch>
