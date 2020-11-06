@@ -21,9 +21,9 @@ import {
   MDBFormInline,
   MDBAnimation
 } from "mdbreact";
-import "../TestHome.css";
+import "../css/TestHome.css";
 
-class ClassicFormPage extends React.Component {
+class TestHome extends React.Component {
   state = {
     collapseID: ""
   };
@@ -197,4 +197,4 @@ class ClassicFormPage extends React.Component {
   }
 }
 
-export default ClassicFormPage;
+export default TestHome;
