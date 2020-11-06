@@ -1,5 +1,5 @@
 import React from 'react';
-import '../style.css';
+import '../css/TestHome.css';
 import '../css/bootstrap.min.css';
 import 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
@@ -85,7 +85,37 @@ function MyVerticallyCenteredModal2(props) {
     </Modal>
   );
 }
-
+function Navbarp() {
+  return (
+    <Navbar collapseOnSelect expand="lg" bg="pink" variant="green" sticky = "top">
+    <Navbar.Brand href="#">Show Your Beauty</Navbar.Brand>
+    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+    <Navbar.Collapse id="responsive-navbar-nav">
+      <Nav className="mr-auto">
+        <Nav.Link href="#Hospitals">Hospitals</Nav.Link>
+        <Nav.Link href="#Doctors">Doctors</Nav.Link>
+        <Nav.Link href="#Eyes">Eyes</Nav.Link>
+        <Nav.Link href="#Lips">Lips</Nav.Link>
+        <Nav.Link href="#Jaw">Jaw</Nav.Link>
+        <Nav.Link href="#Fillers">Fillers</Nav.Link>
+        <Nav.Link href="#Breast">Breast</Nav.Link>
+        <Nav.Link href="#Tummy">Tummy</Nav.Link>
+        <NavDropdown title="Others" id="collasible-nav-dropdown">
+          <NavDropdown.Item href="Suction Lipectomy">Suction Lipectomy"</NavDropdown.Item>
+          <NavDropdown.Item href="Laser Resurfacing">Laser Resurfacing</NavDropdown.Item>
+          <NavDropdown.Item href="Sclerotherapy">Sclerotherapy</NavDropdown.Item>
+          <NavDropdown.Divider />
+          <NavDropdown.Item href="Not Listed">Not Listed</NavDropdown.Item>
+        </NavDropdown>
+      </Nav>
+      <Form inline>
+        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+        <Button variant="outline-light">Search</Button>
+      </Form>
+    </Navbar.Collapse>
+  </Navbar>
+  );
+};
 function Home() {
   const [modalShow, setModalShow] = React.useState(false);
   const [modalShow2, setModalShow2] = React.useState(false);
@@ -132,33 +162,7 @@ function Home() {
           </div>
         </header>
         
-        <Navbar collapseOnSelect expand="lg" bg="warning" variant="light" sticky = "top">
-        <Navbar.Brand href="#">Show Your Beauty</Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link href="#Hospitals">Hospitals</Nav.Link>
-            <Nav.Link href="#Doctors">Doctors</Nav.Link>
-            <Nav.Link href="#Eyes">Eyes</Nav.Link>
-            <Nav.Link href="#Lips">Lips</Nav.Link>
-            <Nav.Link href="#Jaw">Jaw</Nav.Link>
-            <Nav.Link href="#Fillers">Fillers</Nav.Link>
-            <Nav.Link href="#Breast">Breast</Nav.Link>
-            <Nav.Link href="#Tummy">Tummy</Nav.Link>
-            <NavDropdown title="Others" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="Suction Lipectomy">Suction Lipectomy"</NavDropdown.Item>
-              <NavDropdown.Item href="Laser Resurfacing">Laser Resurfacing</NavDropdown.Item>
-              <NavDropdown.Item href="Sclerotherapy">Sclerotherapy</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="Not Listed">Not Listed</NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-          <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-light">Search</Button>
-          </Form>
-        </Navbar.Collapse>
-      </Navbar>
+        <Navbarp></Navbarp>
 
         <div className="jumbotron p-3 p-md-5 text-white rounded bg-dark">
           <div className="col-md-6 px-0">
@@ -208,6 +212,7 @@ function Home() {
         </CardGroup>
       </div>
       <main role="main" className="container">
+        <Navbarp></Navbarp>
         <div className="row">
           <div className="col-md-8 blog-main">
             <h1 className="pb-3 mb-4 font-italic border-bottom">
