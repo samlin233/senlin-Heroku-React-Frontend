@@ -52,7 +52,7 @@ class TestHome extends React.Component {
             >
               <MDBContainer>
                 <MDBNavbarBrand>
-                  <strong className="white-text">MDB</strong>
+                  <strong className="white-text">ShowYourBeauty</strong>
                 </MDBNavbarBrand>
                 <MDBNavbarToggler onClick={this.handleTogglerClick} />
                 <MDBCollapse isOpen={this.state.collapsed} navbar>
@@ -61,7 +61,7 @@ class TestHome extends React.Component {
                       <MDBNavLink to="#!">Home</MDBNavLink>
                     </MDBNavItem>
                     <MDBNavItem>
-                      <MDBNavLink to="#!">Link</MDBNavLink>
+                      <MDBNavLink to="./Home">Post</MDBNavLink>
                     </MDBNavItem>
                     <MDBNavItem>
                       <MDBNavLink to="#!">Profile</MDBNavLink>
@@ -97,7 +97,7 @@ class TestHome extends React.Component {
                 >
                   <MDBAnimation type="fadeInLeft" delay=".3s">
                     <h1 className="h1-responsive font-weight-bold mt-sm-5">
-                      Make purchases with our app
+                      Make your review about your surgery!
                     </h1>
                     <hr className="hr-light" />
                     <h6 className="mb-4">
@@ -106,17 +106,17 @@ class TestHome extends React.Component {
                       veniam sapiente, fugiat! Commodi sequi non animi ea dolor
                       molestiae iste.
                     </h6>
-                    <MDBBtn color="white">Download</MDBBtn>
-                    <MDBBtn outline color="white">
-                      Learn More
-                    </MDBBtn>
+                    <Fragment>
+                        <MDBBtn rounded gradient="blue">New Post</MDBBtn>
+                        <MDBBtn rounded gradient="aqua">View Newest Post </MDBBtn>
+                    </Fragment>
                   </MDBAnimation>
                 </MDBCol>
 
                 <MDBCol md="6" xl="5" className="mt-xl-5">
                   <MDBAnimation type="fadeInRight" delay=".3s">
                     <img
-                      src="https://mdbootstrap.com/img/Mockups/Transparent/Small/admin-new.png"
+                      src="https://www.dailaimei.com/uploads/allimg/05/t4518601938945024.jpg"
                       alt=""
                       className="img-fluid"
                     />
@@ -126,22 +126,6 @@ class TestHome extends React.Component {
             </MDBContainer>
           </MDBMask>
         </MDBView>
-
-        <MDBContainer>
-          <MDBRow className="py-5">
-            <MDBCol md="12" className="text-center">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-            </MDBCol>
-          </MDBRow>
-        </MDBContainer>
       </div>
     );
   }
