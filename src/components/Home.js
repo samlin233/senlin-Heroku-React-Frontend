@@ -80,7 +80,7 @@ function MyVerticallyCenteredModal2(props) {
         </p>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide} href = "/">Log In</Button>
+        <Button onClick={props.onHide} href = "/" >Log In</Button>
       </Modal.Footer>
     </Modal>
   );
@@ -136,10 +136,10 @@ function Home() {
         <header className="blog-header py-3">
           <div className="row flex-nowrap justify-content-between align-items-center">
             <div className="col-4 pt-1">
-              <a className="text-muted" href="#">LogoGoesHere</a>
+              <a className="text-muted" href="/">LogoGoesHere</a>
             </div>
             <div className="col-4 text-center">
-              <a className="blog-header-logo text-dark" href="#">Show Your Beauty</a>
+              <a className="blog-header-logo text-dark" href="/">Show Your Beauty</a>
             </div>
             <div className="col-4 d-flex justify-content-end align-items-center">
             
@@ -212,9 +212,9 @@ function Home() {
         </CardGroup>
       </div>
       <main role="main" className="container">
+        <Navbarp></Navbarp>
         <div className="row">
           <div className="col-md-8 blog-main">
-            <Navbarp></Navbarp>
             <h1 className="pb-3 mb-4 font-italic border-bottom">
               Newest Post
             </h1>

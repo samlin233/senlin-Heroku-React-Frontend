@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import {
   MDBNavbar,
   MDBNavbarBrand,
@@ -61,7 +61,7 @@ class TestHome extends React.Component {
                       <MDBNavLink to="#!">Home</MDBNavLink>
                     </MDBNavItem>
                     <MDBNavItem>
-                      <MDBNavLink to="./Home">Post</MDBNavLink>
+                      <Router to="./Home">Post</Router>
                     </MDBNavItem>
                     <MDBNavItem>
                       <MDBNavLink to="#!">Profile</MDBNavLink>
