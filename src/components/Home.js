@@ -87,33 +87,33 @@ function MyVerticallyCenteredModal2(props) {
 }
 function Navbarp() {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="pink" variant="green" sticky = "top">
-    <Navbar.Brand href="#">Show Your Beauty</Navbar.Brand>
-    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-    <Navbar.Collapse id="responsive-navbar-nav">
-      <Nav className="mr-auto">
-        <Nav.Link href="#Hospitals">Hospitals</Nav.Link>
-        <Nav.Link href="#Doctors">Doctors</Nav.Link>
-        <Nav.Link href="#Eyes">Eyes</Nav.Link>
-        <Nav.Link href="#Lips">Lips</Nav.Link>
-        <Nav.Link href="#Jaw">Jaw</Nav.Link>
-        <Nav.Link href="#Fillers">Fillers</Nav.Link>
-        <Nav.Link href="#Breast">Breast</Nav.Link>
-        <Nav.Link href="#Tummy">Tummy</Nav.Link>
-        <NavDropdown title="Others" id="collasible-nav-dropdown">
-          <NavDropdown.Item href="Suction Lipectomy">Suction Lipectomy"</NavDropdown.Item>
-          <NavDropdown.Item href="Laser Resurfacing">Laser Resurfacing</NavDropdown.Item>
-          <NavDropdown.Item href="Sclerotherapy">Sclerotherapy</NavDropdown.Item>
-          <NavDropdown.Divider />
-          <NavDropdown.Item href="Not Listed">Not Listed</NavDropdown.Item>
-        </NavDropdown>
-      </Nav>
-      <Form inline>
-        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-        <Button variant="outline-light">Search</Button>
-      </Form>
-    </Navbar.Collapse>
-  </Navbar>
+    <Navbar collapseOnSelect expand="lg" bg="warning" variant="light" sticky = "top">
+        <Navbar.Brand href="#">Show Your Beauty</Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="mr-auto">
+            <Nav.Link href="#Hospitals">Hospitals</Nav.Link>
+            <Nav.Link href="#Doctors">Doctors</Nav.Link>
+            <Nav.Link href="#Eyes">Eyes</Nav.Link>
+            <Nav.Link href="#Lips">Lips</Nav.Link>
+            <Nav.Link href="#Jaw">Jaw</Nav.Link>
+            <Nav.Link href="#Fillers">Fillers</Nav.Link>
+            <Nav.Link href="#Breast">Breast</Nav.Link>
+            <Nav.Link href="#Tummy">Tummy</Nav.Link>
+            <NavDropdown title="Others" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="Suction Lipectomy">Suction Lipectomy"</NavDropdown.Item>
+              <NavDropdown.Item href="Laser Resurfacing">Laser Resurfacing</NavDropdown.Item>
+              <NavDropdown.Item href="Sclerotherapy">Sclerotherapy</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="Not Listed">Not Listed</NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+          <Form inline>
+            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+            <Button variant="outline-light">Search</Button>
+          </Form>
+        </Navbar.Collapse>
+      </Navbar>
   );
 };
 function Home() {
@@ -212,9 +212,9 @@ function Home() {
         </CardGroup>
       </div>
       <main role="main" className="container">
-        <Navbarp></Navbarp>
         <div className="row">
           <div className="col-md-8 blog-main">
+            <Navbarp></Navbarp>
             <h1 className="pb-3 mb-4 font-italic border-bottom">
               Newest Post
             </h1>
