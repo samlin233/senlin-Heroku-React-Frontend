@@ -11,7 +11,6 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 import Modal from 'react-bootstrap/Modal';
-import Navbartype from './Navbarp';
 import Backgroundjpg from '../image/background.jpg';
 import Image from 'react-bootstrap/Image';
 import Container from 'react-bootstrap/Container';
@@ -120,6 +119,13 @@ function Navbarp() {
 function Home() {
   const [modalShow, setModalShow] = React.useState(false);
   const [modalShow2, setModalShow2] = React.useState(false);
+  const overlay = (
+    <div
+      id="sidenav-overlay"
+      style={{ backgroundColor: "transparent" }}
+      onClick={this.handleTogglerClick}
+    />
+  );
   return (
    
     <div>
