@@ -11,8 +11,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 import Modal from 'react-bootstrap/Modal';
-import Backgroundjpg from '../image/background.jpg';
-import Image from 'react-bootstrap/Image';
+import Backgroundimg from '../image/cool-background.png';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -85,13 +84,6 @@ function MyVerticallyCenteredModal2(props) {
   );
 }
 function Navbarp() {
-  const overlay = (
-    <div
-      id="sidenav-overlay"
-      style={{ backgroundColor: "transparent" }}
-      onClick={this.handleTogglerClick}
-    />
-  );
   const [modalShow, setModalShow] = React.useState(false);
   const [modalShow2, setModalShow2] = React.useState(false);
   return (
@@ -124,11 +116,17 @@ function Navbarp() {
         </Navbar.Collapse>
       </Navbar>
   );
-  {this.state.collapsed && overlay}
 };
 function Home() {
   return (
-    <div>
+    <div style={
+      {
+      backgroundImage: 'url(${Backgroundimg}) ',
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat'
+      }
+    }>
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
       <meta name="description" content />
