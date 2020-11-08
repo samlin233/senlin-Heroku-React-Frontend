@@ -88,7 +88,16 @@ function Navbarp() {
   const [modalShow2, setModalShow2] = React.useState(false);
   return (
     <Navbar collapseOnSelect expand="lg" bg="success" variant="light" sticky = "top">
-        <Navbar.Brand href="#">Show Your Beauty</Navbar.Brand>
+          <Navbar.Brand href="#home">
+          <img
+            alt=""
+            src="../image/logoimage.png"
+            width="30"
+            height="30"
+            className="d-inline-block align-top"
+          />{' '}
+          Show Your Beauty
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
