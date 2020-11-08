@@ -61,7 +61,7 @@ class TestHome extends React.Component {
                       <MDBNavLink to="#!">Home</MDBNavLink>
                     </MDBNavItem>
                     <MDBNavItem>
-                      <Link to="./Home">Post</Link>
+                      <MDBNavLink to="/Home">Post</MDBNavLink>
                     </MDBNavItem>
                     <MDBNavItem>
                       <MDBNavLink to="#!">Profile</MDBNavLink>

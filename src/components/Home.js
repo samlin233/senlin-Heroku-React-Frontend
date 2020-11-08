@@ -87,30 +87,31 @@ function MyVerticallyCenteredModal2(props) {
 }
 function Navbarp() {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="warning" variant="light" sticky = "top">
+    <Navbar collapseOnSelect expand="lg" bg="success" variant="light" sticky = "top">
         <Navbar.Brand href="#">Show Your Beauty</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="#Hospitals">Hospitals</Nav.Link>
-            <Nav.Link href="#Doctors">Doctors</Nav.Link>
-            <Nav.Link href="#Eyes">Eyes</Nav.Link>
-            <Nav.Link href="#Lips">Lips</Nav.Link>
-            <Nav.Link href="#Jaw">Jaw</Nav.Link>
-            <Nav.Link href="#Fillers">Fillers</Nav.Link>
-            <Nav.Link href="#Breast">Breast</Nav.Link>
-            <Nav.Link href="#Tummy">Tummy</Nav.Link>
-            <NavDropdown title="Others" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="Suction Lipectomy">Suction Lipectomy"</NavDropdown.Item>
-              <NavDropdown.Item href="Laser Resurfacing">Laser Resurfacing</NavDropdown.Item>
-              <NavDropdown.Item href="Sclerotherapy">Sclerotherapy</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="Not Listed">Not Listed</NavDropdown.Item>
-            </NavDropdown>
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="#">Post</Nav.Link>
+            <Nav.Link href="/NewPost">New Post</Nav.Link>
           </Nav>
-          <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-light">Search</Button>
+          <Form inline>            
+          <Button variant="outline-light" onClick={() => setModalShow(true)}>
+              Sign Up
+            </Button>
+            <MyVerticallyCenteredModal
+              show={modalShow}
+              onHide={() => setModalShow(false)}
+            />
+
+            <Button variant="outline-light" onClick={() => setModalShow2(true)}>
+              Log In
+            </Button>
+            <MyVerticallyCenteredModal2
+              show={modalShow2}
+              onHide={() => setModalShow2(false)}
+            />
           </Form>
         </Navbar.Collapse>
       </Navbar>
@@ -132,7 +133,7 @@ function Home() {
       {/* Custom styles for this template */}
       <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet" />
       <link href="../style.css" rel="stylesheet" />
-      <div className="container">
+      {/* <div className="container">
         <header className="blog-header py-3">
           <div className="row flex-nowrap justify-content-between align-items-center">
             <div className="col-4 pt-1">
@@ -210,7 +211,7 @@ function Home() {
             </Card.Footer>
           </Card>
         </CardGroup>
-      </div>
+      </div> */}
       <main role="main" className="container">
         <Navbarp></Navbarp>
         <div className="row">
