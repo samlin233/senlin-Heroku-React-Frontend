@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/TestHome.css';
+import '../css/Home.css';
 import '../css/bootstrap.min.css';
 import 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
@@ -128,14 +128,7 @@ function Navbarp() {
 };
 function Home() {
   return (
-    <div styles={
-      {
-      backgroundImage: 'url(${Backgroundimg})',
-      backgroundPosition: 'center',
-      backgroundSize: 'cover',
-      backgroundRepeat: 'no-repeat'
-      }
-    }>
+    <div>
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
       <meta name="description" content />
