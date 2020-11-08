@@ -85,6 +85,15 @@ function MyVerticallyCenteredModal2(props) {
   );
 }
 function Navbarp() {
+  const overlay = (
+    <div
+      id="sidenav-overlay"
+      style={{ backgroundColor: "transparent" }}
+      onClick={this.handleTogglerClick}
+    />
+  );
+  const [modalShow, setModalShow] = React.useState(false);
+  const [modalShow2, setModalShow2] = React.useState(false);
   return (
     <Navbar collapseOnSelect expand="lg" bg="success" variant="light" sticky = "top">
         <Navbar.Brand href="#">Show Your Beauty</Navbar.Brand>
@@ -115,19 +124,10 @@ function Navbarp() {
         </Navbar.Collapse>
       </Navbar>
   );
+  {this.state.collapsed && overlay}
 };
 function Home() {
-  const [modalShow, setModalShow] = React.useState(false);
-  const [modalShow2, setModalShow2] = React.useState(false);
-  const overlay = (
-    <div
-      id="sidenav-overlay"
-      style={{ backgroundColor: "transparent" }}
-      onClick={this.handleTogglerClick}
-    />
-  );
   return (
-   
     <div>
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
