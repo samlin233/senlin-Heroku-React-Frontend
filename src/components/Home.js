@@ -87,14 +87,14 @@ function Navbarp() {
   const [modalShow2, setModalShow2] = React.useState(false);
   return (
     <Navbar collapseOnSelect expand="lg" bg="success" variant="light" sticky = "top">
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="/">
           <img
             alt=""
-            src="logoimage.png"
+            src="../image/logoimage.png"
             width="30"
             height="30"
             className="d-inline-block align-top"
-          />{' '}
+          />
           Show Your Beauty
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -126,6 +126,16 @@ function Navbarp() {
   );
 };
 export class Home extends React.Component{
+  state = {
+    loading: true,
+    posts: []
+  };
+  async componentDidMount(){
+    const url = "https://cs148-python-backend.herokuapp.com/api";
+    const response = await fetch(url);
+    const data = await response.json();
+    this.setState({posts: data.post, loading: false});
+  }
   render(){
     return (
       <div>
@@ -235,6 +245,11 @@ export class Home extends React.Component{
                   <a href="#" class="stretched-link">Go somewhere</a>
                 </div>
               </div>
+
+              <div>{this.state.post._id}</div>
+              <div>{this.state.post.author}</div>
+              <div>{this.state.post.text}</div>
+              
 
               <div class="row no-gutters bg-light position-relative">
                 <div class="col-md-6 mb-md-0 p-md-4">
