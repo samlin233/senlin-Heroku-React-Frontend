@@ -131,7 +131,7 @@ export class Home extends React.Component{
     posts: []
   };
   async componentDidMount(){
-    const url = "https://cs148-python-backend.herokuapp.com/api";
+    const url = "https://cs148-python-backend.herokuapp.com/api/posts";
     const response = await fetch(url);
     const data = await response.json();
     this.setState({posts: data.post, loading: false});
