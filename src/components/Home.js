@@ -223,48 +223,38 @@ function Home() {
             <h1 className="pb-3 mb-4 font-italic border-bottom">
               Newest Post
             </h1>
-            <div className="blog-post"href=''>
-              <h2 className="blog-post-title">Sample post</h2>
-              <p className="blog-post-meta" >Nov 1, 2020 by <a href="#">User</a></p>
+            <div class="row no-gutters bg-light position-relative">
+              <div class="col-md-6 mb-md-0 p-md-4">
+                <img src="..." class="w-100" alt="..."></img>
+              </div>
+              <div class="col-md-6 position-static p-4 pl-md-0">
+                <h5 class="mt-0">Columns with stretched link</h5>
+                <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                <a href="#" class="stretched-link">Go somewhere</a>
+              </div>
+            </div>
 
-              <p>This post shows a few different types of content that's supported and styled with Bootstrap. Basic typography, images, and code are all supported.</p>
+            <div class="row no-gutters bg-light position-relative">
+              <div class="col-md-6 mb-md-0 p-md-4">
+                <img src="..." class="w-100" alt="..."></img>
+              </div>
+              <div class="col-md-6 position-static p-4 pl-md-0">
+                <h5 class="mt-0">Columns with stretched link</h5>
+                <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                <a href="#" class="stretched-link">Go somewhere</a>
+              </div>
+            </div>
 
-              <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
-              <blockquote>
-                <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              </blockquote>
-              <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-              <h2>Heading</h2>
-              <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-              <h3>Sub-heading</h3>
-              <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-              <pre><code>Example code block</code></pre>
-              <p>Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-            </div>{/* /.blog-post */}
-
-            <div className="blog-post">
-              <h2 className="blog-post-title">Another post</h2>
-              <p className="blog-post-meta">December 23, 2020 by <a href="#">User2</a></p>
-              <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
-              <blockquote>
-                <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              </blockquote>
-              <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-              <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-            </div>{/* /.blog-post */}
-
-            <div className="blog-post">
-              <h2 className="blog-post-title">New Post</h2>
-              <p className="blog-post-meta">December 14, 2020 by <a href="#">User3</a></p>
-              <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-              <ul>
-                <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
-                <li>Donec id elit non mi porta gravida at eget metus.</li>
-                <li>Nulla vitae elit libero, a pharetra augue.</li>
-              </ul>
-              <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-              <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
-            </div>{/* /.blog-post */}
+            <div class="row no-gutters bg-light position-relative">
+              <div class="col-md-6 mb-md-0 p-md-4">
+                <img src="..." class="w-100" alt="..."></img>
+              </div>
+              <div class="col-md-6 position-static p-4 pl-md-0">
+                <h5 class="mt-0">Columns with stretched link</h5>
+                <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                <a href="#" class="stretched-link">Go somewhere</a>
+              </div>
+            </div>
             
             <nav className="blog-pagination">
               <a className="btn btn-outline-primary" href="#">Show More</a>
@@ -304,14 +294,12 @@ function Home() {
           </aside>{/* /.blog-sidebar */}
         </div>{/* /.row */}
       </main>{/* /.container */}
-      <footer className="blog-footer">
+      <main>      
+        <footer className="blog-footer">
         <p>
           <a href="#">Back to top</a>
         </p>
-      </footer>
-      {/* Bootstrap core JavaScript
-  ================================================== */}
-      {/* Placed at the end of the document so the pages load faster */}
+      </footer></main>
     </div>
     );
   };
