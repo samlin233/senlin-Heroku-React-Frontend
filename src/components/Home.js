@@ -127,16 +127,45 @@ function Navbarp() {
 };
 export class Home extends React.Component{
   state = {
-    loading: true,
-    posts: []
-  };
-  async componentDidMount(){
-    const url = "https://cs148-python-backend.herokuapp.com/api/posts";
-    const response = await fetch(url);
-    const data = await response.json();
-    this.setState({posts: data.post, loading: false});
+    isLoggedIn: false,
+    userID: '',
+    name: '',
+    email: ''
+  }
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: null,
+      isLoaded: false,
+      posts: []
+    };
+  }
+  componentDidMount(){
+    fetch('https://cs148-python-backend.herokuapp.com/api/posts')
+    .then(res => res.json())
+    .then(
+      (result) => {
+        this.setState({
+          isLoaded: true,
+          posts: result.posts
+        });
+      },
+      //handle errors here
+      (error) => {
+        this.setState({
+          isLoaded: true,
+          error
+        });
+      }
+    )
   }
   render(){
+    const { error, isLoaded, posts } = this.state;
+    if (error) {
+      return <div>Error: {error.message}</div>;
+    } else if (!isLoaded) {
+      return <div>Loading...</div>;
+    } else {
     return (
       <div>
         <meta charSet="utf-8" />
@@ -148,7 +177,8 @@ export class Home extends React.Component{
         <link href="../css/bootstrap.min.css" rel="stylesheet" />
         {/* Custom styles for this template */}
         <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet" />
-        <link href="../style.css" rel="stylesheet" />
+        <link href="../css/Home.css" rel="stylesheet" />
+
         {/* <div className="container">
           <header className="blog-header py-3">
             <div className="row flex-nowrap justify-content-between align-items-center">
@@ -235,44 +265,28 @@ export class Home extends React.Component{
               <h1 className="pb-3 mb-4 font-italic border-bottom">
                 Newest Post
               </h1>
-              <div class="row no-gutters bg-light position-relative">
-                <div class="col-md-6 mb-md-0 p-md-4">
-                  <img src="..." class="w-100" alt="..."></img>
-                </div>
-                <div class="col-md-6 position-static p-4 pl-md-0">
-                  <h5 class="mt-0">Columns with stretched link</h5>
-                  <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-                  <a href="#" class="stretched-link">Go somewhere</a>
-                </div>
-              </div>
+                {posts.map(post => (
+                  <div class="row no-gutters bg-light position-relative" key={post.id}>
+                    <div class="col-md-6 mb-md-0 p-md-4">
+                      <img src={post.image} class="w-100" alt="..."></img>
+                    </div>
+                    <div class="col-md-6 position-static p-4 pl-md-0">
+                      <h5 class="mt-0">{post.title}</h5>
+                      <p className="blog-post-meta" >Nov 1, 2020 by <a href="#">{post.author}</a></p>
+                      <hr />
+                      <p>{post.text}</p>
+                      <a href={post.image} class="stretched-link">Go somewhere</a>
+                    </div>
+                    <hr />
+                  </div>
+                ))}
 
-              <div>{this.state.post._id}</div>
+
+              {/* <div>{this.state.post._id}</div>
               <div>{this.state.post.author}</div>
               <div>{this.state.post.text}</div>
-              
+               */}
 
-              <div class="row no-gutters bg-light position-relative">
-                <div class="col-md-6 mb-md-0 p-md-4">
-                  <img src="..." class="w-100" alt="..."></img>
-                </div>
-                <div class="col-md-6 position-static p-4 pl-md-0">
-                  <h5 class="mt-0">Columns with stretched link</h5>
-                  <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-                  <a href="#" class="stretched-link">Go somewhere</a>
-                </div>
-              </div>
-
-              <div class="row no-gutters bg-light position-relative">
-                <div class="col-md-6 mb-md-0 p-md-4">
-                  <img src="..." class="w-100" alt="..."></img>
-                </div>
-                <div class="col-md-6 position-static p-4 pl-md-0">
-                  <h5 class="mt-0">Columns with stretched link</h5>
-                  <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-                  <a href="#" class="stretched-link">Go somewhere</a>
-                </div>
-              </div>
-              
               <nav className="blog-pagination">
                 <a className="btn btn-outline-primary" href="#">Show More</a>
                 <a className="btn btn-outline-secondary disabled" href="#">Show Less</a>
@@ -321,4 +335,5 @@ export class Home extends React.Component{
       );
     }
   };
+}
 export default Home;
