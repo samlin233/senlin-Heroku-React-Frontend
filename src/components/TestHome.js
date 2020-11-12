@@ -14,21 +14,24 @@ import {
   MDBBtn,
   MDBView,
   MDBContainer,
-  MDBFormInline,
+  MDBDropdown,
+  MDBDropdownToggle,
+  MDBDropdownItem,
+  MDBIcon,
+  MDBDropdownMenu,
   MDBAnimation
 } from "mdbreact";
 import "../css/TestHome.css";
 
 class TestHome extends React.Component {
-  state = {
-    collapsed: false
-  };
 
-  handleTogglerClick = () => {
-    this.setState({
-      collapsed: !this.state.collapsed
-    });
-  };
+    state = {
+      isOpen: false
+    };
+    
+    toggleCollapse = () => {
+      this.setState({ isOpen: !this.state.isOpen });
+    }
 
   render() {
     const overlay = (
@@ -41,51 +44,38 @@ class TestHome extends React.Component {
     return (
       <div id="apppage">
         <Router>
-          <div>
-            <MDBNavbar
-              color="primary-color"
-              dark
-              expand="md"
-              fixed="top"
-              scrolling
-              transparent
-            >
-              <MDBContainer>
-                <MDBNavbarBrand>
-                  <strong className="white-text">ShowYourBeauty</strong>
-                </MDBNavbarBrand>
-                <MDBNavbarToggler onClick={this.handleTogglerClick} />
-                <MDBCollapse isOpen={this.state.collapsed} navbar>
-                  <MDBNavbarNav left>
-                    <MDBNavItem active>
-                      <MDBNavLink to="#!">Home</MDBNavLink>
-                    </MDBNavItem>
-                    <MDBNavItem>
-                      <MDBNavLink to="/Home">Post</MDBNavLink>
-                    </MDBNavItem>
-                    <MDBNavItem>
-                      <MDBNavLink to="#!">Profile</MDBNavLink>
-                    </MDBNavItem>
-                  </MDBNavbarNav>
-                  <MDBNavbarNav right>
-                    <MDBNavItem>
-                      <MDBFormInline waves>
-                        <div className="md-form my-0">
-                          <input
-                            className="form-control mr-sm-2"
-                            type="text"
-                            placeholder="Search"
-                            aria-label="Search"
-                          />
-                        </div>
-                      </MDBFormInline>
-                    </MDBNavItem>
-                  </MDBNavbarNav>
-                </MDBCollapse>
-              </MDBContainer>
-            </MDBNavbar>
-            {this.state.collapsed && overlay}
-          </div>
+
+          <MDBNavbar color="default-color" dark expand="md">
+            <MDBNavbarBrand>
+              <strong className="white-text">Show Your Beauty</strong>
+            </MDBNavbarBrand>
+            <MDBNavbarToggler onClick={this.toggleCollapse} />
+            <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
+              <MDBNavbarNav left>
+                <MDBNavItem active>
+                  <MDBNavLink to="/">Home</MDBNavLink>
+                </MDBNavItem>
+                <MDBNavItem>
+                  <MDBNavLink to="/Home">View Posts</MDBNavLink>
+                </MDBNavItem>
+                <MDBNavItem>
+                  <MDBNavLink to="/CreatNewPost">Write a Post</MDBNavLink>
+                </MDBNavItem>
+              </MDBNavbarNav>
+              <MDBNavbarNav right>
+                <MDBNavItem>
+                  <MDBNavLink className="waves-effect waves-light" to="#!">
+                    <MDBIcon fab icon="twitter" />
+                  </MDBNavLink>
+                </MDBNavItem>
+                <MDBNavItem>
+                  <MDBNavLink className="waves-effect waves-light" to="#!">
+                    <MDBIcon fab icon="google-plus-g" />
+                  </MDBNavLink>
+                </MDBNavItem>
+              </MDBNavbarNav>
+            </MDBCollapse>
+          </MDBNavbar>
         </Router>
         <MDBView>
           <MDBMask className="d-flex justify-content-center align-items-center gradient">
@@ -107,8 +97,8 @@ class TestHome extends React.Component {
                       molestiae iste.
                     </h6>
                     <Fragment>
-                        <MDBBtn rounded gradient="blue">New Post</MDBBtn>
-                        <MDBBtn rounded gradient="aqua">View Newest Post </MDBBtn>
+                      <MDBBtn rounded gradient="blue" href="/CreatNewPost">New Post</MDBBtn>
+                      <MDBBtn rounded gradient="aqua" href="/Home">View Newest Post </MDBBtn>
                     </Fragment>
                   </MDBAnimation>
                 </MDBCol>
