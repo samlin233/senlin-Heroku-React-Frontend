@@ -7,24 +7,13 @@ export function Login(data) {
         headers: {
             'Content-Type': 'application/json'
         }
-    }).then(response => {
-        if (!response.ok) {            
-            return response.json()
-                .catch(() => {
-                    // Couldn't parse the JSON
-                    throw new Error(response.status);
-                })
-                .then(({message}) => {
-                    // Got valid JSON with error response, use it
-                    throw new Error(message || response.status);
-                });
+    }).then(response => response.json())
+    .then(res=>{
+        if(res.check != null){
+        localStorage.setItem('username', res.check);
         }
-        // Successful response, parse the JSON and return the data
-        const json = response.json();
-        console.log(json);
-        return response.json();
-    }).catch(err => err);
-}
+      }).catch(err => console.log(err));
+    }
 
 export function SignUp(data) {
     fetch('https://cs148-python-backend.herokuapp.com/api/register', {

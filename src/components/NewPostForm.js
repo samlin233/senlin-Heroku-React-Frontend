@@ -7,7 +7,8 @@ class Form extends React.Component {
         this.state = {
           title: "",
           text: "",
-          image: ""
+          image: "",
+          author: localStorage.getItem('username')
         };
         this.componentWillReceiveProps = this.componentWillReceiveProps.bind(this);
         this.handletextChange = this.handletextChange.bind(this);

@@ -3,7 +3,7 @@ import { withRouter } from 'react-router';
 import LoginPageForm from '../components/LoginPageForm';
 import { Login } from '../actions/LoginAndRegisterAction';
 
-export default class CreatNewPost extends Component {
+export default class LogInPage extends Component {
 
     handleSubmit(data) {
         Login(data);

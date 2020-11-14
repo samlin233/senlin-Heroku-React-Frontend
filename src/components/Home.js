@@ -1,4 +1,4 @@
-import React ,{useState}from 'react';
+import React, { useState } from 'react';
 import '../css/Home.css';
 import '../css/bootstrap.min.css';
 import 'react-bootstrap';
@@ -19,8 +19,8 @@ import { render } from '@testing-library/react';
 import '../image/logoimage.png'
 
 
-class MyVerticallyCenteredModal extends React.Component{
-  render(){
+class MyVerticallyCenteredModal extends React.Component {
+  render() {
     return (
       <Modal
         size="lg"
@@ -54,7 +54,7 @@ class MyVerticallyCenteredModal extends React.Component{
     );
   };
 }
-class MyVerticallyCenteredModal2 extends React.Component{
+class MyVerticallyCenteredModal2 extends React.Component {
   render() {
     return (
       <Modal
@@ -97,7 +97,7 @@ export class Home extends React.Component {
       error: null,
       isLoaded: false,
       posts: [],
-      isLoggedIn: false,
+      LoggedIn: false,
       username: "",
       password: "",
       modalShow: false,
@@ -109,6 +109,7 @@ export class Home extends React.Component {
     this.onChangeUsername = this.onChangeUsername.bind(this);
     this.onChangePassword = this.onChangePassword.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.componentDidMount = this.componentDidMount.bind(this);
   }
 
   onChangeUsername(e) {
@@ -129,67 +130,92 @@ export class Home extends React.Component {
         //access the results here....
       });
   }
+
   componentDidMount() {
+    Promise.all([fetch('https://cs148-python-backend.herokuapp.com/api/check_status'), fetch('https://cs148-python-backend.herokuapp.com/api/posts')])
 
-    fetch('https://cs148-python-backend.herokuapp.com/api/posts')
-      .then(res => res.json())
-      .then(
-        (result) => {
+      .then(([res1, res2]) => {
+        return Promise.all([res1.json(), res2.json()])
+      })
+      .then(([res1, res2]) => {
+        if (res1.check != null) {
           this.setState({
-            isLoaded: true,
-            posts: result.posts
-          });
-        },
-        //handle errors here
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error
-          });
+            LoggedIn: true,
+            username: toString(res1.check)
+          })
         }
-      )
-
-    fetch('https://cs148-python-backend.herokuapp.com/api/check_status')
-        .then(res2 => res2.json())
-        .then(
-          (result2) => {
-            // if(result2.check == "True"){
-              this.setState({
-                isLoggedIn: true
-              })
-            // }
-          },
-          (error) => {
-            this.setState({
-              isLoggedIn: false,
-              error
-            });
-          }
-        )
+        else {
+          this.setState({
+            LoggedIn: false
+          })
+        }
+        this.setState({
+          isLoaded: true,
+          posts: res2.posts
+        });
+      });
   }
   render() {
-    const { error, isLoaded, posts} = this.state;
+    const { error, isLoaded, posts, LoggedIn } = this.state;
 
     let form;
-    // if(!this.state.isLoggedIn){
-      form = <Form inline>
-                  <Button variant="outline-light" href="/RegisterPage" onClick={() =>this.props.modalShow(true)}>
-                    Sign Up
+    if (localStorage.getItem('username') == null) {
+      form =
+        <Navbar collapseOnSelect expand="lg" bg="success" variant="light" sticky="top">
+          <Navbar.Brand href="/">
+            <img
+              alt=""
+              src="../image/logoimage.png"
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+            />
+                Show Your Beauty
+                </Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="mr-auto">
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="#">Post</Nav.Link>
+            </Nav>
+            <Form inline>
+              <Button variant="outline-light" href="/RegisterPage" onClick={() => this.props.modalShow(true)}>
+                Sign Up
                   </Button>
-
-                  <Button variant="outline-light" href="/LogInPage" onClick={() =>this.props.modalShow2(true)}>
-                    Log In
+              <Button variant="outline-light" href="/LogInPage" onClick={() => this.props.modalShow2(true)}>
+                Log In
                   </Button>
-
-                </Form>;
-    // }
-    // else{
-    //   form = <Form inline>
-    //   <Button variant="outline-light" href="/Home" onClick={() =>this.state.isLoggedIn(false)}>
-    //     Log off
-    //   </Button>
-    //   </Form>
-    // }
+            </Form>
+          </Navbar.Collapse>
+        </Navbar>
+    }
+    else {
+      form = <Navbar collapseOnSelect expand="lg" bg="success" variant="light" sticky="top">
+        <Navbar.Brand href="/">
+          <img
+            alt=""
+            src="../image/logoimage.png"
+            width="30"
+            height="30"
+            className="d-inline-block align-top"
+          />
+                  Show Your Beauty
+          </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="mr-auto">
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="#">Post</Nav.Link>
+            <Nav.Link href="/CreatNewPost">Write a New Post</Nav.Link>
+          </Nav>
+          <Form inline>
+            <Button variant="outline-light" onClick={() => window.localStorage.removeItem('username')} href="/Home" >
+              Log off
+      </Button>
+          </Form>
+        </Navbar.Collapse>
+      </Navbar>
+    }
 
     if (error) {
       return <div>Error: {error.message}</div>;
@@ -210,27 +236,7 @@ export class Home extends React.Component {
           <link href="../css/Home.css" rel="stylesheet" />
 
           <main role="main" className="container">
-            <Navbar collapseOnSelect expand="lg" bg="success" variant="light" sticky="top">
-              <Navbar.Brand href="/">
-                <img
-                  alt=""
-                  src="../image/logoimage.png"
-                  width="30"
-                  height="30"
-                  className="d-inline-block align-top"
-                />
-              Show Your Beauty
-              </Navbar.Brand>
-              <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-              <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav className="mr-auto">
-                  <Nav.Link href="/">Home</Nav.Link>
-                  <Nav.Link href="#">Post</Nav.Link>
-                  <Nav.Link href="/CreatNewPost">New Post</Nav.Link>
-                </Nav>
-                {form}
-              </Navbar.Collapse>
-            </Navbar>
+            {form}
             <div className="row">
               <div className="col-md-8 blog-main">
                 <h1 className="pb-3 mb-4 font-italic border-bottom">
@@ -246,7 +252,7 @@ export class Home extends React.Component {
                       <p className="blog-post-meta" >{String(post.time)}<a href="#">{post.author}</a></p>
                       <hr />
                       <p>{post.text}</p>
-                      <a href={post.image} class="stretched-link">Go somewhere</a>
+                      <a href={post.image} class="stretched-link">View more</a>
                     </div>
                     <hr />
                   </div>
