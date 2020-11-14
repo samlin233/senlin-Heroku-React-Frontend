@@ -16,7 +16,6 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { render } from '@testing-library/react';
-import '../image/logoimage.png'
 
 
 class MyVerticallyCenteredModal extends React.Component {
@@ -165,7 +164,7 @@ export class Home extends React.Component {
           <Navbar.Brand href="/">
             <img
               alt=""
-              src="../image/logoimage.png"
+              src="https://media.discordapp.net/attachments/292092110394621952/777003861139128321/logoimage.png"
               width="30"
               height="30"
               className="d-inline-block align-top"
@@ -194,7 +193,7 @@ export class Home extends React.Component {
         <Navbar.Brand href="/">
           <img
             alt=""
-            src="../image/logoimage.png"
+            src="https://media.discordapp.net/attachments/292092110394621952/777003861139128321/logoimage.png"
             width="30"
             height="30"
             className="d-inline-block align-top"
