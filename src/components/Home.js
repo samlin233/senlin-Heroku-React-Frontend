@@ -205,12 +205,16 @@ export class Home extends React.Component {
           <Nav className="mr-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="#">Post</Nav.Link>
+            <Nav.Link href="/HospitalSearch">Hospital</Nav.Link>
             <Nav.Link href="/CreatNewPost">Write a New Post</Nav.Link>
           </Nav>
           <Form inline>
+            <Button variant="outline-light" href='/Users/${localStorage.username}' >
+              {localStorage.username}
+            </Button>
             <Button variant="outline-light" onClick={() => window.localStorage.removeItem('username')} href="/Home" >
               Log off
-      </Button>
+            </Button>
           </Form>
         </Navbar.Collapse>
       </Navbar>
@@ -240,7 +244,7 @@ export class Home extends React.Component {
               <div className="col-md-8 blog-main">
                 <h1 className="pb-3 mb-4 font-italic border-bottom">
                   Newest Post
-              </h1>
+                </h1>
                 {posts.map(post => (
                   <div class="row no-gutters bg-light position-relative" key={post.id}>
                     <div class="col-md-6 mb-md-0 p-md-4">

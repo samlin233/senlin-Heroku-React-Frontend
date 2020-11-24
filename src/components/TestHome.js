@@ -97,8 +97,8 @@ class TestHome extends React.Component {
                       molestiae iste.
                     </h6>
                     <Fragment>
-                      <MDBBtn rounded gradient="blue" href="/CreatNewPost">New Post</MDBBtn>
-                      <MDBBtn rounded gradient="aqua" href="/Home">View Newest Post </MDBBtn>
+                      <MDBBtn rounded color="success" href="/CreatNewPost">New Post</MDBBtn>
+                      <MDBBtn rounded color="info" href="/Home">View Newest Post </MDBBtn>
                     </Fragment>
                   </MDBAnimation>
                 </MDBCol>

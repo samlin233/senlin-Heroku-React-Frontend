@@ -5,6 +5,7 @@ import TestHome from './components/TestHome';
 import CreatNewPost from './components/CreatNewPost';
 import RegisterPage from './components/RegisterPage';
 import LoginPage from './components/LoginPage';
+import HospitalSearch from './components/HotpitalSearch';
 
 function App() { 
     return (
@@ -15,6 +16,7 @@ function App() {
                 <Route path="/CreatNewPost" component={CreatNewPost} exact />
                 <Route path="/LogInPage" component={LoginPage} exact />
                 <Route path="/RegisterPage" component={RegisterPage} exact/>
+                <Route path="/HospitalSearch" component={HospitalSearch} exact/>
                 <Route component={Error} />
             </Switch>
 
