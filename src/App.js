@@ -6,6 +6,8 @@ import CreatNewPost from './components/CreatNewPost';
 import RegisterPage from './components/RegisterPage';
 import LoginPage from './components/LoginPage';
 import HospitalSearch from './components/HotpitalSearch';
+import UserProfile from './components/UserProfile';
+import UserProfileForm from './components/UserProfileForm';
 
 function App() { 
     return (
@@ -17,6 +19,8 @@ function App() {
                 <Route path="/LogInPage" component={LoginPage} exact />
                 <Route path="/RegisterPage" component={RegisterPage} exact/>
                 <Route path="/HospitalSearch" component={HospitalSearch} exact/>
+                <Route path="/UserProfile" component={UserProfile} exact/>
+                <Route path="/UserProfileForm" component={UserProfileForm} exact/>
                 <Route component={Error} />
             </Switch>
 
