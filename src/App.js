@@ -6,13 +6,14 @@ import CreatNewPost from './components/CreatNewPost';
 import RegisterPage from './components/RegisterPage';
 import LoginPage from './components/LoginPage';
 import HospitalSearch from './components/HotpitalSearch';
-
+import PostShow from './components/PostShow';
 function App() { 
     return (
         <main>
             <Switch>
-                <Route path="/" component={TestHome} exact />
+                <Route path="/" component={TestHome}  exact/>
                 <Route path="/Home" component={Home} exact />
+                <Route path="/posts/:id" component ={PostShow}/>
                 <Route path="/CreatNewPost" component={CreatNewPost} exact />
                 <Route path="/LogInPage" component={LoginPage} exact />
                 <Route path="/RegisterPage" component={RegisterPage} exact/>

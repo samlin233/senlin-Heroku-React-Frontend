@@ -1,20 +1,17 @@
 import fetch from 'isomorphic-fetch';
 
-export function fetchBlogPosts() {
-    return fetch('https://cs148-python-backend.herokuapp.com/api/write', {
-        method: 'GET',
-        mode: 'CORS'
-    }).then(res => res.json())
-    .catch(err => err);
-}
 
-export function fetchBlogPost(id) {
-    return fetch('https://cs148-python-backend.herokuapp.com/api/write/' + id, {
-        method: 'GET',
-        mode: 'CORS'
-    }).then(res => res.json())
-    .catch(err => err);
-}
+export function fetchPost(id) {
+    fetch(`https://cs148-python-backend.herokuapp.com/api/find_post/ ${id}`, {
+        method: 'GET'
+    }).then(response => response.json())
+    .then(res=>{
+        if(res.post != null){
+            var post = res.post;
+            localStorage.setItem('post', JSON.stringify(post));
+        }
+      }).catch(err => console.log(err));
+    }
 
 export function createBlogPost(data) {
     fetch('https://cs148-python-backend.herokuapp.com/api/write', {

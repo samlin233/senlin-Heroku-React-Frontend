@@ -6,7 +6,13 @@ import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import {
+  BrowserRouter as Router,
+  Link,
+  Route,
+  Switch,
+} from 'react-router-dom';
+import { fetchPost } from '../actions/blogPostActions';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
@@ -153,7 +159,9 @@ export class Home extends React.Component {
           posts: res2.posts
         });
       });
+
   }
+  
   render() {
     const { error, isLoaded, posts, LoggedIn } = this.state;
 
@@ -225,6 +233,7 @@ export class Home extends React.Component {
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
+      
       return (
         <div>
           <meta charSet="utf-8" />
@@ -246,16 +255,16 @@ export class Home extends React.Component {
                   Newest Post
                 </h1>
                 {posts.map(post => (
-                  <div class="row no-gutters bg-light position-relative" key={post.id}>
+                  <div class="row no-gutters bg-light position-relative" key={post._id.$oid}>
                     <div class="col-md-6 mb-md-0 p-md-4">
                       <img src={post.image} class="w-100" alt="..."></img>
                     </div>
                     <div class="col-md-6 position-static p-4 pl-md-0">
                       <h5 class="mt-0">{post.title}</h5>
-                      <p className="blog-post-meta" >{String(post.time)}<a href="#">{post.author}</a></p>
+                <p className="blog-post-meta" >{String(post.time)}<a href="#">{post.author}</a> <a>{post._id.$oid}</a></p>
                       <hr />
                       <p>{post.text}</p>
-                      <a href={post.image} class="stretched-link">View more</a>
+                      <Link className="btn btn-info" to={`/posts/${post._id.$oid}`} >Show</Link>
                     </div>
                     <hr />
                   </div>
