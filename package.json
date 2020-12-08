@@ -6,9 +6,11 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
-    "antd": "^4.9.1",
+    "antd": "^4.9.2",
     "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
+    "google-map-react": "^2.1.9",
+    "google-maps-react": "^2.0.6",
     "jodit-react": "^1.0.66",
     "mdbreact": "^4.27.0",
     "react": "^16.13.1",
@@ -42,5 +44,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://0.0.0.0:8118/"
 }

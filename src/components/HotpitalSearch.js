@@ -4,10 +4,12 @@ import HospitalZipSearchForm from './HospitalZipSearchForm';
 import { ZipSearch, NameSearch } from '../actions/HospitalSearch';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import Card from 'react-bootstrap/Card';
+import CardGroup from 'react-bootstrap/CardGroup';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-
+import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 class HospitalSearch extends React.Component {
 
     handleSubmit(data) {
@@ -20,27 +22,52 @@ class HospitalSearch extends React.Component {
     }
 
     render() {
+        const style = {
+            width: '280px',
+            height: '200px'
+        };
         let form;
         if (localStorage.getItem('hospitals') === undefined || localStorage.getItem('hospitals').length > 1) {
             let mapOfHospital = JSON.parse(localStorage.getItem('hospitals'));
             form =
                 mapOfHospital.map(hospital => (
                     <div class="row no-gutters bg-light position-relative" key={hospital.id}>
+                        <Card style={{ width: '18rem' }}>
+                            <Map
+                                google={this.props.google}
+                                zoom={14}
+                                initialCenter={
+                                    {
+                                        lat: hospital.properties.LATITUDE,
+                                        lng: hospital.properties.LONGITUDE
+                                    }
+                                }
+                                style={style}>
+                                <Marker
+                                    lat={hospital.properties.LATITUDE}
+                                    lng={hospital.properties.LONGITUDE}
+                                    name={hospital.properties.NAME}
+                                    color="red"
+                                />
 
-                        <div class="col-md-6 position-static p-4 pl-md-0">
-                            <h5 class="mt-0">{hospital.properties.NAME}</h5>
-                            <p className="blog-hospital-meta" >{hospital.properties.CITY + hospital.properties.STATE}<a href="#">{hospital.author}</a></p>
-                            <hr />
-                            <p>{hospital.properties.NAICS_DESC}</p>
-                            <a href={hospital.properties.SOURCE} class="stretched-link">View more</a>
-                        </div>
-                        <hr />
+                            </Map>
+                            <Card.Img variant="top" src="https://codingbillingsolutions.com/wp-content/uploads/2014/08/300x200.gif" />
+                            <Card.Body>
+                                <Card.Title>{hospital.properties.NAME}</Card.Title>
+                                <Card.Text>
+                                    {hospital.properties.CITY + hospital.properties.STATE}
+                                    {hospital.author}
+                                    <hr />
+                                    <p>{hospital.properties.NAICS_DESC}</p>
+                                </Card.Text>
+                                <Button variant="primary" href="">Go somewhere</Button>
+                            </Card.Body>
+                        </Card>
                     </div>
                 ))
         }
         else {
-            form =
-                <hr />
+            form = null
         }
         return (
             <main>
@@ -58,8 +85,8 @@ class HospitalSearch extends React.Component {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">
-                            <Nav.Link href="/Home">Home</Nav.Link>
-                            <Nav.Link href="/Post">Post</Nav.Link>
+                            <Nav.Link href="/">Home</Nav.Link>
+                            <Nav.Link href="#">Post</Nav.Link>
                             <Nav.Link href="/HospitalSearch">Hospital</Nav.Link>
                             <Nav.Link href="/CreatNewPost">Write a New Post</Nav.Link>
                         </Nav>
@@ -77,16 +104,25 @@ class HospitalSearch extends React.Component {
                     <HospitalZipSearchForm onSubmit={this.handleSubmit.bind(this)} herf='#'></HospitalZipSearchForm>
                     <HospitalNameSearchForm onSubmit={this.handleSubmit2.bind(this)} herf='#'></HospitalNameSearchForm>
                 </div>
-                <div className="row">
-                    <div className="col-md-8 blog-main">
+                <div className="row"
+                style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                }}>
+                    <div className="col-md-8 blog-main" >
                         <h1 className="pb-3 mb-4 font-italic border-bottom">
                             Search Result
                         </h1>
-                        {form}
+                        <CardGroup>
+                            {form}
+                        </CardGroup>
                     </div>
                 </div>
             </main>
         );
     }
 }
-export default HospitalSearch;
+export default GoogleApiWrapper({
+    apiKey: 'AIzaSyCUQcjo7uuh8p9J7SRcK-0jnXb3la7IKac'
+})(HospitalSearch);
