@@ -40,6 +40,7 @@ class HosipitalZipSearchForm extends React.Component {
                     <FormControl
                         type = "text"
                         placeholder="Type in Zip code"
+                        className="mr-sm-2"
                         aria-label="Zip Code Research:"
                         aria-describedby="basic-addon2"
                         value = {this.state.element}

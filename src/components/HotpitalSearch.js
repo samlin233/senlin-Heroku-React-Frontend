@@ -9,8 +9,8 @@ import CardGroup from 'react-bootstrap/CardGroup';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Map, GoogleApiWrapper } from 'google-maps-react';
-export default class HospitalSearch extends React.Component {
+import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+class HospitalSearch extends React.Component {
 
     handleSubmit(data) {
         ZipSearch(data);
@@ -22,10 +22,10 @@ export default class HospitalSearch extends React.Component {
     }
 
     render() {
-        const mapStyles = {
-            width: '180',
-            height: '100',
-          };
+        const style = {
+            width: '280px',
+            height: '200px'
+        };
         let form;
         if (localStorage.getItem('hospitals') === undefined || localStorage.getItem('hospitals').length > 1) {
             let mapOfHospital = JSON.parse(localStorage.getItem('hospitals'));
@@ -36,22 +36,29 @@ export default class HospitalSearch extends React.Component {
                             <Map
                                 google={this.props.google}
                                 zoom={14}
-                                style={mapStyles}
                                 initialCenter={
-                                {
-                                    lat: -1.2884,
-                                    lng: 36.8233
+                                    {
+                                        lat: hospital.properties.LATITUDE,
+                                        lng: hospital.properties.LONGITUDE
+                                    }
                                 }
-                                }
-                            />
-                            <Card.Img variant="top" src="holder.js/100px180" />
+                                style={style}>
+                                <Marker
+                                    lat={hospital.properties.LATITUDE}
+                                    lng={hospital.properties.LONGITUDE}
+                                    name={hospital.properties.NAME}
+                                    color="red"
+                                />
+
+                            </Map>
+                            <Card.Img variant="top" src="https://codingbillingsolutions.com/wp-content/uploads/2014/08/300x200.gif" />
                             <Card.Body>
                                 <Card.Title>{hospital.properties.NAME}</Card.Title>
                                 <Card.Text>
-                                {hospital.properties.CITY + hospital.properties.STATE}
-                                {hospital.author}
-                                <hr />
-                                <p>{hospital.properties.NAICS_DESC}</p>
+                                    {hospital.properties.CITY + hospital.properties.STATE}
+                                    {hospital.author}
+                                    <hr />
+                                    <p>{hospital.properties.NAICS_DESC}</p>
                                 </Card.Text>
                                 <Button variant="primary" href={hospital.properties.SOURCE}>Go somewhere</Button>
                             </Card.Body>
@@ -97,8 +104,13 @@ export default class HospitalSearch extends React.Component {
                     <HospitalZipSearchForm onSubmit={this.handleSubmit.bind(this)} herf='#'></HospitalZipSearchForm>
                     <HospitalNameSearchForm onSubmit={this.handleSubmit2.bind(this)} herf='#'></HospitalNameSearchForm>
                 </div>
-                <div className="row">
-                    <div className="col-md-8 blog-main">
+                <div className="row"
+                style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                }}>
+                    <div className="col-md-8 blog-main" >
                         <h1 className="pb-3 mb-4 font-italic border-bottom">
                             Search Result
                         </h1>
@@ -111,3 +123,6 @@ export default class HospitalSearch extends React.Component {
         );
     }
 }
+export default GoogleApiWrapper({
+    apiKey: 'AIzaSyCUQcjo7uuh8p9J7SRcK-0jnXb3la7IKac'
+})(HospitalSearch);
