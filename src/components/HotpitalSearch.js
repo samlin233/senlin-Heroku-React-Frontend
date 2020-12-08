@@ -4,9 +4,12 @@ import HospitalZipSearchForm from './HospitalZipSearchForm';
 import { ZipSearch, NameSearch } from '../actions/HospitalSearch';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import Card from 'react-bootstrap/Card';
+import CardGroup from 'react-bootstrap/CardGroup';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { Map, GoogleApiWrapper } from 'google-maps-react';
 export default class HospitalSearch extends React.Component {
 
     handleSubmit(data) {
@@ -19,27 +22,45 @@ export default class HospitalSearch extends React.Component {
     }
 
     render() {
+        const mapStyles = {
+            width: '180',
+            height: '100',
+          };
         let form;
         if (localStorage.getItem('hospitals') === undefined || localStorage.getItem('hospitals').length > 1) {
             let mapOfHospital = JSON.parse(localStorage.getItem('hospitals'));
             form =
                 mapOfHospital.map(hospital => (
                     <div class="row no-gutters bg-light position-relative" key={hospital.id}>
-
-                        <div class="col-md-6 position-static p-4 pl-md-0">
-                            <h5 class="mt-0">{hospital.properties.NAME}</h5>
-                            <p className="blog-hospital-meta" >{hospital.properties.CITY + hospital.properties.STATE}<a href="#">{hospital.author}</a></p>
-                            <hr />
-                            <p>{hospital.properties.NAICS_DESC}</p>
-                            <a href={hospital.properties.SOURCE} class="stretched-link">View more</a>
-                        </div>
-                        <hr />
+                        <Card style={{ width: '18rem' }}>
+                            <Map
+                                google={this.props.google}
+                                zoom={14}
+                                style={mapStyles}
+                                initialCenter={
+                                {
+                                    lat: -1.2884,
+                                    lng: 36.8233
+                                }
+                                }
+                            />
+                            <Card.Img variant="top" src="holder.js/100px180" />
+                            <Card.Body>
+                                <Card.Title>{hospital.properties.NAME}</Card.Title>
+                                <Card.Text>
+                                {hospital.properties.CITY + hospital.properties.STATE}
+                                {hospital.author}
+                                <hr />
+                                <p>{hospital.properties.NAICS_DESC}</p>
+                                </Card.Text>
+                                <Button variant="primary" href={hospital.properties.SOURCE}>Go somewhere</Button>
+                            </Card.Body>
+                        </Card>
                     </div>
                 ))
         }
         else {
-            form =
-                <hr />
+            form = null
         }
         return (
             <main>
@@ -81,7 +102,9 @@ export default class HospitalSearch extends React.Component {
                         <h1 className="pb-3 mb-4 font-italic border-bottom">
                             Search Result
                         </h1>
-                        {form}
+                        <CardGroup>
+                            {form}
+                        </CardGroup>
                     </div>
                 </div>
             </main>
