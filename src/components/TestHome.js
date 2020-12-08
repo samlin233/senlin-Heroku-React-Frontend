@@ -21,6 +21,12 @@ import {
   MDBDropdownMenu,
   MDBAnimation
 } from "mdbreact";
+import{
+  Navbar,
+  Nav,
+  Form,
+  Button
+}from "react-bootstrap";
 import "../css/TestHome.css";
 
 class TestHome extends React.Component {
@@ -45,37 +51,36 @@ class TestHome extends React.Component {
       <div id="apppage">
         <Router>
 
-          <MDBNavbar color="default-color" dark expand="md">
-            <MDBNavbarBrand>
-              <strong className="white-text">Show Your Beauty</strong>
-            </MDBNavbarBrand>
-            <MDBNavbarToggler onClick={this.toggleCollapse} />
-            <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
-              <MDBNavbarNav left>
-                <MDBNavItem active>
-                  <MDBNavLink to="/">Home</MDBNavLink>
-                </MDBNavItem>
-                <MDBNavItem>
-                  <MDBNavLink to="/Home">View Posts</MDBNavLink>
-                </MDBNavItem>
-                <MDBNavItem>
-                  <MDBNavLink to="/CreatNewPost">Write a Post</MDBNavLink>
-                </MDBNavItem>
-              </MDBNavbarNav>
-              <MDBNavbarNav right>
-                <MDBNavItem>
-                  <MDBNavLink className="waves-effect waves-light" to="#!">
-                    <MDBIcon fab icon="twitter" />
-                  </MDBNavLink>
-                </MDBNavItem>
-                <MDBNavItem>
-                  <MDBNavLink className="waves-effect waves-light" to="#!">
-                    <MDBIcon fab icon="google-plus-g" />
-                  </MDBNavLink>
-                </MDBNavItem>
-              </MDBNavbarNav>
-            </MDBCollapse>
-          </MDBNavbar>
+          
+        <Navbar collapseOnSelect expand="lg" bg="success" variant="light" sticky="top">
+                        <Navbar.Brand href="/">
+                            <img
+                                alt=""
+                                src="https://media.discordapp.net/attachments/292092110394621952/777003861139128321/logoimage.png"
+                                width="30"
+                                height="30"
+                                className="d-inline-block align-top"
+                            />
+                  Show Your Beauty
+                </Navbar.Brand>
+                        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                        <Navbar.Collapse id="responsive-navbar-nav">
+                            <Nav className="mr-auto">
+                                <Nav.Link href="/Home">Home</Nav.Link>
+                                <Nav.Link href="/Post">Post</Nav.Link>
+                                <Nav.Link href="/HospitalSearch">Hospital</Nav.Link>
+                                <Nav.Link href="/CreatNewPost">Write a New Post</Nav.Link>
+                            </Nav>
+                            <Form inline>
+                                <Button variant="outline-light" href='/Users/${localStorage.username}' >
+                                    {localStorage.username}
+                                </Button>
+                                <Button variant="outline-light" onClick={() => window.localStorage.removeItem('username')} href="/Home" >
+                                    Log off
+                            </Button>
+                            </Form>
+                        </Navbar.Collapse>
+                    </Navbar>
         </Router>
         <MDBView>
           <MDBMask className="d-flex justify-content-center align-items-center gradient">
@@ -98,7 +103,7 @@ class TestHome extends React.Component {
                     </h6>
                     <Fragment>
                       <MDBBtn rounded color="success" href="/CreatNewPost">New Post</MDBBtn>
-                      <MDBBtn rounded color="info" href="/Home">View Newest Post </MDBBtn>
+                      <MDBBtn rounded color="info" href="/Post">View Newest Post </MDBBtn>
                     </Fragment>
                   </MDBAnimation>
                 </MDBCol>

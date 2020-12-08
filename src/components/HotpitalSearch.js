@@ -60,7 +60,7 @@ class HospitalSearch extends React.Component {
                                     <hr />
                                     <p>{hospital.properties.NAICS_DESC}</p>
                                 </Card.Text>
-                                <Button variant="primary" href={hospital.properties.SOURCE}>Go somewhere</Button>
+                                <Button variant="primary" href="">Go somewhere</Button>
                             </Card.Body>
                         </Card>
                     </div>
