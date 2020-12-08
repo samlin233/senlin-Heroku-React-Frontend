@@ -157,7 +157,7 @@ export class Home extends React.Component {
           posts: res2.posts
         });
       });
-
+      localStorage.setItem('hospitals',"");
   }
   
   render() {

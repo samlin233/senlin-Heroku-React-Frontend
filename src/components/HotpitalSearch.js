@@ -20,7 +20,8 @@ class HospitalSearch extends React.Component {
         NameSearch(data);
         this.props.history.push('/HospitalSearch')
     }
-
+    componentDidMount(){
+    }
     render() {
         const style = {
             width: '280px',
