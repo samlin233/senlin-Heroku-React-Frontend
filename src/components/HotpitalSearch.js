@@ -7,7 +7,8 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-export default class HospitalSearch extends React.Component {
+
+class HospitalSearch extends React.Component {
 
     handleSubmit(data) {
         ZipSearch(data);
@@ -57,8 +58,8 @@ export default class HospitalSearch extends React.Component {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">
-                            <Nav.Link href="/">Home</Nav.Link>
-                            <Nav.Link href="/home">Post</Nav.Link>
+                            <Nav.Link href="/Home">Home</Nav.Link>
+                            <Nav.Link href="/Post">Post</Nav.Link>
                             <Nav.Link href="/HospitalSearch">Hospital</Nav.Link>
                             <Nav.Link href="/CreatNewPost">Write a New Post</Nav.Link>
                         </Nav>
@@ -88,3 +89,4 @@ export default class HospitalSearch extends React.Component {
         );
     }
 }
+export default HospitalSearch;

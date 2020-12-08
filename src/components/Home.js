@@ -180,8 +180,8 @@ export class Home extends React.Component {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/home">Post</Nav.Link>
+              <Nav.Link href="/Home">Home</Nav.Link>
+              <Nav.Link href="/Post">Post</Nav.Link>
             </Nav>
             <Form inline>
               <Button variant="outline-light" href="/RegisterPage" onClick={() => this.props.modalShow(true)}>
@@ -212,8 +212,8 @@ export class Home extends React.Component {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/home">Post</Nav.Link>
+            <Nav.Link href="/Home">Home</Nav.Link>
+            <Nav.Link href="/Post">Post</Nav.Link>
             <Nav.Link href="/HospitalSearch">Hospital</Nav.Link>
             <Nav.Link href="/CreatNewPost">Write a New Post</Nav.Link>
           </Nav>

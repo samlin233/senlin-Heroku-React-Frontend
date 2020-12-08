@@ -1,8 +1,13 @@
 import React from 'react'
 export default {
-    config: [
+    config: [        
         {
             path: "/Home",
+            component: React.lazy(() => import('../components/TestHome')),
+            exact: false
+        },
+        {
+            path: "/Post",
             component: React.lazy(() => import('../components/Home')),
             exact: false
         },
@@ -11,11 +16,7 @@ export default {
             component: React.lazy(() => import('../components/PostShow')),
             exact: false
         },
-        {
-            path: "/",
-            component: React.lazy(() => import('../components/TestHome')),
-            exact: false
-        },
+
         {
             path: "/CreatNewPost",
             component: React.lazy(() => import('../components/CreatNewPost')),
