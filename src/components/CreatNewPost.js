@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router';
 import NewPostForm from './NewPostForm';
 import { createBlogPost } from '../actions/blogPostActions';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 export default class CreatNewPost extends Component {

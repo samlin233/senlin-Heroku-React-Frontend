@@ -32,7 +32,7 @@ export default class LogInPage extends Component {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">
                             <Nav.Link href="/">Home</Nav.Link>
-                            <Nav.Link href="#">Post</Nav.Link>
+                            <Nav.Link href="/home">Post</Nav.Link>
                         </Nav>
                         <Form inline>
                             <Button variant="outline-light" href="/RegisterPage" onClick={() => this.props.modalShow(true)}>
