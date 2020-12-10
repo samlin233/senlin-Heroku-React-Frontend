@@ -1,25 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import 'react-bootstrap';
-import Card from 'react-bootstrap/Card';
-import CardGroup from 'react-bootstrap/CardGroup';
+import { Link } from "react-router-dom";
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import {
-  BrowserRouter as Router,
-  Link,
-  Route,
-  Switch,
-} from 'react-router-dom';
-import { fetchPost } from '../actions/blogPostActions';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 import Modal from 'react-bootstrap/Modal';
 import axios from 'axios';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import { render } from '@testing-library/react';
 
 
 class MyVerticallyCenteredModal extends React.Component {
@@ -157,90 +145,90 @@ export class Home extends React.Component {
           posts: res2.posts
         });
       });
-      localStorage.setItem('hospitals',"");
+
   }
-  
+
   render() {
     const { error, isLoaded, posts, LoggedIn } = this.state;
 
     let form;
-    if (localStorage.getItem('username') == null) {
-      form =
-        <Navbar collapseOnSelect expand="lg" bg="success" variant="light" sticky="top">
-          <Navbar.Brand href="/">
-            <img
-              alt=""
-              src="https://media.discordapp.net/attachments/292092110394621952/777003861139128321/logoimage.png"
-              width="30"
-              height="30"
-              className="d-inline-block align-top"
-            />
-                Show Your Beauty
-                </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mr-auto">
-              <Nav.Link href="/Home">Home</Nav.Link>
-              <Nav.Link href="/Post">Post</Nav.Link>
-            </Nav>
-            <Form inline>
-              <Button variant="outline-light" href="/RegisterPage" onClick={() => this.props.modalShow(true)}>
-                Sign Up
-                  </Button>
-              <Button variant="outline-light" onClick={() => {
-                // this.props.modalShow2(true)
-                this.props.history.push("/LogInPage")
-              }}>
-                Log In
-                  </Button>
-            </Form>
-          </Navbar.Collapse>
-        </Navbar>
-    }
-    else {
-      form = <Navbar collapseOnSelect expand="lg" bg="success" variant="light" sticky="top">
-        <Navbar.Brand href="/">
-          <img
-            alt=""
-            src="https://media.discordapp.net/attachments/292092110394621952/777003861139128321/logoimage.png"
-            width="30"
-            height="30"
-            className="d-inline-block align-top"
-          />
-                  Show Your Beauty
-          </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link href="/Home">Home</Nav.Link>
-            <Nav.Link href="/Post">Post</Nav.Link>
-            <Nav.Link href="/HospitalSearch">Hospital</Nav.Link>
-            <Nav.Link href="/CreatNewPost">Write a New Post</Nav.Link>
-          </Nav>
-          <Form inline>
-            <Button variant="outline-light" href='/Users/${localStorage.username}' >
-              {localStorage.username}
-            </Button>
-            <Button variant="outline-light" onClick={() => window.localStorage.removeItem('username')} href="/Home" >
-              Log off
-            </Button>
-          </Form>
-        </Navbar.Collapse>
-      </Navbar>
-    }
+    // if (localStorage.getItem('username') == null) {
+    //   form =
+    //     <Navbar collapseOnSelect expand="lg" bg="success" variant="light" sticky="top">
+    //       <Navbar.Brand href="/">
+    //         <img
+    //           alt=""
+    //           src="https://media.discordapp.net/attachments/292092110394621952/777003861139128321/logoimage.png"
+    //           width="30"
+    //           height="30"
+    //           className="d-inline-block align-top"
+    //         />
+    //             Show Your Beauty
+    //             </Navbar.Brand>
+    //       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+    //       <Navbar.Collapse id="responsive-navbar-nav">
+    //         <Nav className="mr-auto">
+    //           <Nav.Link href="/">Home</Nav.Link>
+    //           <Nav.Link href="#">Post</Nav.Link>
+    //         </Nav>
+    //         <Form inline>
+    //           <Button variant="outline-light" href="/RegisterPage" onClick={() => this.props.modalShow(true)}>
+    //             Sign Up
+    //               </Button>
+    //           <Button variant="outline-light" onClick={() => {
+    //             // this.props.modalShow2(true)
+    //             this.props.history.push("/LogInPage")
+    //           }}>
+    //             Log In
+    //               </Button>
+    //         </Form>
+    //       </Navbar.Collapse>
+    //     </Navbar>
+    // }
+    // else {
+    //   form = <Navbar collapseOnSelect expand="lg" bg="success" variant="light" sticky="top">
+    //     <Navbar.Brand href="/">
+    //       <img
+    //         alt=""
+    //         src="https://media.discordapp.net/attachments/292092110394621952/777003861139128321/logoimage.png"
+    //         width="30"
+    //         height="30"
+    //         className="d-inline-block align-top"
+    //       />
+    //               Show Your Beauty
+    //       </Navbar.Brand>
+    //     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+    //     <Navbar.Collapse id="responsive-navbar-nav">
+    //       <Nav className="mr-auto">
+    //         <Nav.Link href="/">Home</Nav.Link>
+    //         <Nav.Link href="#">Post</Nav.Link>
+    //         <Nav.Link href="/HospitalSearch">Hospital</Nav.Link>
+    //         <Nav.Link href="/CreatNewPost">Write a New Post</Nav.Link>
+    //       </Nav>
+    //       <Form inline>
+    //         <Button variant="outline-light" href='/Users/${localStorage.username}' >
+    //           {localStorage.username}
+    //         </Button>
+    //         <Button variant="outline-light" onClick={() => window.localStorage.removeItem('username')} href="/Home" >
+    //           Log off
+    //         </Button>
+    //       </Form>
+    //     </Navbar.Collapse>
+    //   </Navbar>
+    // }
 
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
-      
+
       return (
         <div>
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-          <meta name="description" content />
-          <meta name="author" content />
+          <meta name="description" />
+          <meta name="author" />
           <title>Plastic Surgery</title>
           {/* Bootstrap core CSS */}
           <link href="../css/bootstrap.min.css" rel="stylesheet" />
@@ -248,7 +236,7 @@ export class Home extends React.Component {
           <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet" />
           <link href="../css/Home.css" rel="stylesheet" />
 
-          <main role="main" className="container">
+          <main role="main" className="container panel-block margin-top-20">
             {form}
             <div className="row">
               <div className="col-md-8 blog-main">
@@ -256,25 +244,26 @@ export class Home extends React.Component {
                   Newest Post
                 </h1>
                 {posts.map(post => (
-                  <div class="row no-gutters bg-light position-relative" key={post._id.$oid}>
-                    <div class="col-md-6 mb-md-0 p-md-4">
-                      <img src={post.image} class="w-100" alt="..."></img>
+                  <div className="row no-gutters bg-light position-relative" key={post._id.$oid}>
+                    <div className="col-md-6 mb-md-0 p-md-4">
+                      <img src={post.image} className="w-100" alt="..."></img>
                     </div>
-                    <div class="col-md-6 position-static p-4 pl-md-0">
-                      <h5 class="mt-0">{post.title}</h5>
-                <p className="blog-post-meta" >{String(post.time)}<a href="#">{post.author}</a> <a>{post._id.$oid}</a></p>
+                    <div className="col-md-6 position-static p-4 pl-md-0">
+                      <h5 className="mt-0">{post.title}</h5>
+                      <p><a href="#">{post.author}</a></p>
+                      <p className="blog-post-meta" >{String(post.time)}</p>
                       <hr />
                       <p>{post.text}</p>
-                      <Link className="btn btn-info" to={`/posts/${post._id.$oid}`} >Show</Link>
+                      <Link className="btn btn-info" to={`/PostDetail?id=${post._id.$oid}`} >Show</Link>
                     </div>
                     <hr />
                   </div>
                 ))}
 
-                <nav className="blog-pagination">
+                {/* <nav className="blog-pagination">
                   <a className="btn btn-outline-primary" href="#">Show More</a>
                   <a className="btn btn-outline-secondary disabled" href="#">Show Less</a>
-                </nav>
+                </nav> */}
               </div>{/* /.blog-main */}
               <aside className="col-md-4 blog-sidebar">
                 <div className="p-3 mb-3 bg-light rounded">

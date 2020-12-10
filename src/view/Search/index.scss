@@ -1,0 +1,41 @@
+.surgey-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 20px;
+  &:hover {
+    background: #eee;
+  }
+  .info {
+    flex: 1;
+  }
+  .rate {
+    // width: 200px;
+  }
+}
+.user-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 20px;
+  &:hover {
+    background: #eee;
+  }
+  .left {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    background: #ccc;
+    border-radius: 50%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .center {
+    flex: 1;
+    padding-left: 10px;
+  }
+}

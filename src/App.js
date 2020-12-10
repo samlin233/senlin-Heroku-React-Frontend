@@ -38,7 +38,12 @@ import "antd/dist/antd.css";
 import React from 'react';
 import routerConfig from './router'
 import RouterView from './router/routerView'
-function App() { 
-    return <RouterView routerList={routerConfig.config} />
+import Header from "./components/Header"
+function App() {
+    return <>
+        <Header/>
+        <RouterView routerList={routerConfig.config} />
+    </>
 };
 export default App;
+

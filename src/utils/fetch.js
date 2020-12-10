@@ -1,7 +1,23 @@
-const BASEHOST = 'http://musicapi.ignorantscholar.cn';
+import { message } from 'antd';
+
+const BASEHOST = 'https://cs148-python-backend.herokuapp.com';
+
+function parseUrlParams(url, data) {
+	return url.replace(/(\{(\w*?)\})/g, function (match, full, n1) {
+		if (full === "$$") {
+			return data;
+		} else if (data[n1] !== undefined) {
+			var rs = data[n1];
+			delete data[n1];
+			return rs;
+		}
+		return full;
+	});
+}
 
 class Fetch {
-	get(url, params) {
+	get(urls, params) {
+		let url = parseUrlParams(urls, params);
 		if (params) {
 			var paramsArray = [];
 			Object.keys(params).forEach(function (key) {
@@ -16,7 +32,6 @@ class Fetch {
 		let fetchConfig = {
 			method: 'get',
 			headers: {
-				authorization: window.sessionStorage.getItem('token') ? window.sessionStorage.getItem('token') : null,
 				'Content-Type': 'application/json; charset=utf-8'
 			},
 			credentials: "include",
@@ -24,38 +39,27 @@ class Fetch {
 		}
 		return fetch(BASEHOST + url, fetchConfig).then(response => {
 			return response.json().then((res) => {
-				if (response.ok && res.code === 200) {
-					return Promise.resolve(res)
-				} else {
-					return Promise.reject(res)
-				}
+				return Promise.resolve(res)
 			})
+		}).catch(err => {
+			message.success('Network request abnormal', 2);
 		})
 	}
 	post(url, options) {
 		return fetch(BASEHOST + url, {
 			method: 'post',
 			headers: {
-				//  authorization: window.sessionStorage.getItem('token') ? window.sessionStorage.getItem('token') : null,
-				//  'Content-Type': 'application/json; charset=utf-8'
-				// token: sessionStorage.getItem('token') ? sessionStorage.getItem('token') : 'GSVDADGFN_WDBSADVD'
+				'Content-Type': 'application/json; charset=utf-8'
 			},
 			credentials: "include",
 			mode: 'cors',
 			body: JSON.stringify(options)
 		}).then(response => {
 			return response.json().then((res) => {
-				delete this.urlList[url] // 每次请求成功后 都删除队列里的路径
-				if (response.ok && res.code === 200) {
-					return Promise.resolve(res)
-				} else {
-					Toasts(res.msg || '网络请求异常', 2000)
-					return Promise.reject(res)
-				}
+				return Promise.resolve(res)
 			})
 		}).catch(err => {
-			delete this.urlList[url] // 每次请求成功后 都删除队列里的路径
-			Toasts('网络请求异常，请两分钟后再试', 2000)
+			message.success('Network request abnormal', 2);
 		})
 	}
 }

@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import { withRouter } from 'react-router';
 import LoginPageForm from '../components/LoginPageForm';
@@ -9,15 +10,16 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 export default class LogInPage extends Component {
 
-    handleSubmit(data) {
-        Login(data);
-        this.props.history.push('/Home');
+    async handleSubmit(data) {
+        await Login(data);
+        // window.location.href = "/Home"
+        // this.props.history.push('/Home');
     }
 
     render() {
         return (
-            <div>
-                <Navbar collapseOnSelect expand="lg" bg="success" variant="light" sticky="top">
+            <div className="main-container">
+                {/* <Navbar collapseOnSelect expand="lg" bg="success" variant="light" sticky="top">
                     <Navbar.Brand href="/">
                         <img
                             alt=""
@@ -31,10 +33,8 @@ export default class LogInPage extends Component {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">
-                            <Nav.Link href="/Home">Home</Nav.Link>
-                            <Nav.Link href="/Post">Post</Nav.Link>
-                            <Nav.Link href="/HospitalSearch">Hospital</Nav.Link>
-                            <Nav.Link href="/CreatNewPost">Write a New Post</Nav.Link>
+                            <Nav.Link href="/">Home</Nav.Link>
+                            <Nav.Link href="#">Post</Nav.Link>
                         </Nav>
                         <Form inline>
                             <Button variant="outline-light" href="/RegisterPage" onClick={() => this.props.modalShow(true)}>
@@ -45,8 +45,11 @@ export default class LogInPage extends Component {
                   </Button>
                         </Form>
                     </Navbar.Collapse>
-                </Navbar>
-                <LoginPageForm onSubmit={this.handleSubmit.bind(this)}></LoginPageForm>
+                </Navbar> */}
+
+                <div className="panel-block margin-top-20">
+                    <LoginPageForm onSubmit={this.handleSubmit.bind(this)}></LoginPageForm>
+                </div>
             </div>
         );
     }

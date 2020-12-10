@@ -1,13 +1,14 @@
+
 import React from 'react'
 export default {
-    config: [        
+    config: [
         {
-            path: "/Home",
+            path: "/initHome",
             component: React.lazy(() => import('../components/TestHome')),
             exact: false
         },
         {
-            path: "/Post",
+            path: "/Home",
             component: React.lazy(() => import('../components/Home')),
             exact: false
         },
@@ -16,7 +17,11 @@ export default {
             component: React.lazy(() => import('../components/PostShow')),
             exact: false
         },
-
+        {
+            path: "/TestHome",
+            component: React.lazy(() => import('../components/TestHome')),
+            exact: false
+        },
         {
             path: "/CreatNewPost",
             component: React.lazy(() => import('../components/CreatNewPost')),
@@ -49,7 +54,37 @@ export default {
         },
         {
             path: "/Surgery",
-            component: React.lazy(() => import('../view/Surgery/index')),
+            component: React.lazy(() => import('../view/Surgery')),
+            exact: false
+        },
+        {
+            path: "/SurgeryDetail",
+            component: React.lazy(() => import('../view/SurgeryDetail')),
+            exact: false
+        },
+        {
+            path: "/Hospital",
+            component: React.lazy(() => import('../view/Hospital')),
+            exact: false
+        },
+        {
+            path: "/PostDetail",
+            component: React.lazy(() => import('../view/PostDetail')),
+            exact: false
+        },
+        {
+            path: "/HospitalDetail",
+            component: React.lazy(() => import('../view/HospitalDetail')),
+            exact: false
+        },
+        {
+            path: "/Search",
+            component: React.lazy(() => import('../view/Search')),
+            exact: false
+        },
+        {
+            path: "/UserProfile",
+            component: React.lazy(() => import('../components/UserProfile')),
             exact: false
         }
     ]

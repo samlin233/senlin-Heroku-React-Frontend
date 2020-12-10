@@ -1,0 +1,52 @@
+.hospital-item {
+  width: 100%;
+  height: 220px;
+  //   background: lawngreen;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  &:hover {
+    background-color: #eee;
+    cursor: pointer;
+  }
+  .hospital-pic {
+    width: 320px;
+    height: 220px;
+    overflow: hidden;
+    div {
+      width: 320px !important;
+      height: 220px !important;
+    }
+    img {
+      //   width: 100%;
+      height: 100%;
+    }
+    // background: #ccc;
+  }
+  .hospital-content {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+    .hospital-title {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .hospital-name {
+        font-size: 20px;
+      }
+    }
+    .hospital-roat {
+    }
+    .hospital-info {
+      padding-top: 20px;
+      width: 100%;
+      height: 150px;
+      //   background: chocolate;
+    }
+  }
+}

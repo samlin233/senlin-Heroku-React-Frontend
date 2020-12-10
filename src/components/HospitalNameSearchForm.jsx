@@ -40,7 +40,6 @@ class HospitalNameSearchForm extends React.Component {
                     <FormControl
                         type = "text"
                         placeholder="Type in name of Hospital"
-                        className="mr-sm-2"
                         aria-label="Name Research:"
                         aria-describedby="basic-addon2"
                         value = {this.state.element}

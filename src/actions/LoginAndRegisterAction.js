@@ -1,3 +1,4 @@
+
 import fetch from 'isomorphic-fetch';
 
 export function Login(data) {
@@ -11,6 +12,7 @@ export function Login(data) {
     .then(res=>{
         if(res.check != null){
         localStorage.setItem('username', res.check);
+        window.location.href = "/Home"
         }
       }).catch(err => console.log(err));
     }

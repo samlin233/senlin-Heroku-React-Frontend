@@ -56,7 +56,7 @@ class NewPostForm extends React.Component {
                         onChange={this.handleTitleChange}
                         className="form-control" />
                 </Form.Group>
-                <Form.Group controlId="exampleForm.ControlSelect2">
+                {/* <Form.Group controlId="exampleForm.ControlSelect2">
                     <Form.Label>Select areas this post related to</Form.Label>
                     <Form.Control as="select" multiple>
                         <option>1</option>
@@ -65,7 +65,7 @@ class NewPostForm extends React.Component {
                         <option>4</option>
                         <option>5</option>
                     </Form.Control>
-                </Form.Group>
+                </Form.Group> */}
                 <Form.Group controlId="exampleForm.ControlTextarea1">
                     <Form.Label>Text:</Form.Label>
                     <Form.Control type="text" as="textarea" rows={3}

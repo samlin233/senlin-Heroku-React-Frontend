@@ -4,7 +4,7 @@ import {BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 function RouterView(props) {
     let routers = props.routers ? props.routers : props.routerList
     const defaultRouter = <Route path="/" component={() => {
-        return <Redirect to="/home" key={22}/>
+        return <Redirect to="/initHome" key={22}/>
     }} key={22} exact/>
     return (
         <BrowserRouter>
@@ -18,7 +18,6 @@ function RouterView(props) {
                             }} key={index}/>
                         }).concat(defaultRouter)
                     }
-
                 </Switch>
             </Suspense>
         </BrowserRouter>

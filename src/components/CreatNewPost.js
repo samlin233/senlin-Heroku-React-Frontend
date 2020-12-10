@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import NewPostForm from './NewPostForm';
 import { createBlogPost } from '../actions/blogPostActions';
@@ -14,8 +15,8 @@ export default class CreatNewPost extends Component {
 
     render() {
         return (
-            <div>
-                <Navbar collapseOnSelect expand="lg" bg="success" variant="light" sticky="top">
+            <div className="main-container">
+                {/* <Navbar collapseOnSelect expand="lg" bg="success" variant="light" sticky="top">
                     <Navbar.Brand href="/">
                         <img
                             alt=""
@@ -29,8 +30,8 @@ export default class CreatNewPost extends Component {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">
-                        <Nav.Link href="/Home">Home</Nav.Link>
-                        <Nav.Link href="/Post">Post</Nav.Link>
+                            <Nav.Link href="/">Home</Nav.Link>
+                            <Nav.Link href="#">Post</Nav.Link>
                             <Nav.Link href="/HospitalSearch">Hospital</Nav.Link>
                             <Nav.Link href="/CreatNewPost">Write a New Post</Nav.Link>
                         </Nav>
@@ -43,8 +44,10 @@ export default class CreatNewPost extends Component {
             </Button>
                         </Form>
                     </Navbar.Collapse>
-                </Navbar>
-                <NewPostForm onSubmit={this.handleSubmit.bind(this)}></NewPostForm>
+                </Navbar> */}
+                <div className="panel-block margin-top-20">
+                    <NewPostForm onSubmit={this.handleSubmit.bind(this)}></NewPostForm>
+                </div>
             </div>
         );
     }
