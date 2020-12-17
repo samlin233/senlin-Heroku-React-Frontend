@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react"
 import { Descriptions, Form, Avatar, Input, Button, Divider, Comment, Spin, Rate } from 'antd';
 import { FrownOutlined, MehOutlined, SmileOutlined, CommentOutlined, LikeOutlined } from '@ant-design/icons';
-import "./index.scss"
-import fetch from "../../utils/fetch"
-import query from "../../utils/query"
+import "./index.scss";
+import fetch from "../../utils/fetch";
+import query from "../../utils/query";
 const { TextArea, Search } = Input;
 
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';

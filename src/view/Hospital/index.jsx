@@ -91,7 +91,6 @@ function Hospital(props) {
                                 <div className="hospital-name">
                                     {item.name}
                                     <SafetyCertificateTwoTone className="padding-left-5" twoToneColor="#52c41a" />
-                                    <InsuranceTwoTone className="padding-left-5" twoToneColor="#52c41a" />
                                 </div>
                                 <div className="hospital-roat">
 

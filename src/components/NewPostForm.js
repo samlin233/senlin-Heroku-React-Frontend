@@ -12,6 +12,8 @@ class NewPostForm extends React.Component {
             title: "",
             text: "",
             image: "",
+            hospital:"NULL",
+            surgery:"NULL",
             author: localStorage.getItem('username')
         };
         this.componentWillReceiveProps = this.componentWillReceiveProps.bind(this);
