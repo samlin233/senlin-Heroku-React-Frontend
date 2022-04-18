@@ -82,10 +82,10 @@ function Hospital(props) {
                         </div>
                         <div className="hospital-info margin-top-10">
                             <Descriptions column={1}>
-                                <Descriptions.Item label="资质">
+                                <Descriptions.Item label="County">
                                     {item.properties.COUNTY}
                                 </Descriptions.Item>
-                                <Descriptions.Item label="地址">
+                                <Descriptions.Item label="Address">
                                     {item.properties.ADDRESS}
                                 </Descriptions.Item>
                             </Descriptions>
